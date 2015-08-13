@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TemplateReport>
+  <ItemTemplates />
+  <ProjectTemplates>
+    <ProjectTemplate Path="..\SPMeta2.VS.CSharp\_Definitions\_project.vstemplate.xml" Name="SPMeta2 Intranet Model" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
+  </ProjectTemplates>
+  <Snippets>
+    <Snippet Title="Web Definition" Description="Creates a new web definition." Shortcut="m2web" Path="Snippets\CSharp\SPMeta2\WebDefinition.snippet" />
+  </Snippets>
+</TemplateReport>

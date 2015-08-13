@@ -3,23 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VsixExtensions", "..\..\..\Desktop\SPMeta2.VsixExtensions\SPMeta2.VsixExtensions\SPMeta2.VsixExtensions\SPMeta2.VsixExtensions.csproj", "{AEDF35AF-E473-407A-ACE2-A8A47F4A37E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VsixExtensions", "SPMeta2.VsixExtensions\SPMeta2.VsixExtensions.csproj", "{AEDF35AF-E473-407A-ACE2-A8A47F4A37E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.Tooling", "..\..\..\Desktop\SPMeta2.VsixExtensions\SPMeta2.VsixExtensions\SPMeta2.VS.Tooling\SPMeta2.VS.Tooling.csproj", "{E2E51197-70CC-452B-AD3A-E393FDBA873B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.CSharp", "SPMeta2.VS.CSharp\SPMeta2.VS.CSharp.csproj", "{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.CSharp", "..\..\..\Desktop\SPMeta2.VsixExtensions\SPMeta2.VsixExtensions\SPMeta2.VS.CSharp\SPMeta2.VS.CSharp.csproj", "{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asset", "Asset", "{89676D7F-59B3-4E41-9A13-269083E064E5}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Img", "Img", "{F85C5790-4977-41F3-9768-3494CA317650}"
-	ProjectSection(SolutionItems) = preProject
-		Assets\img\M2.VS-1.png = Assets\img\M2.VS-1.png
-		Assets\img\M2.VS-2.png = Assets\img\M2.VS-2.png
-		Assets\img\M2.VS-3.png = Assets\img\M2.VS-3.png
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.Tooling", "SPMeta2.VS.Tooling\SPMeta2.VS.Tooling.csproj", "{E2E51197-70CC-452B-AD3A-E393FDBA873B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,18 +19,15 @@ Global
 		{AEDF35AF-E473-407A-ACE2-A8A47F4A37E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDF35AF-E473-407A-ACE2-A8A47F4A37E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDF35AF-E473-407A-ACE2-A8A47F4A37E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E2E51197-70CC-452B-AD3A-E393FDBA873B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E2E51197-70CC-452B-AD3A-E393FDBA873B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2E51197-70CC-452B-AD3A-E393FDBA873B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2E51197-70CC-452B-AD3A-E393FDBA873B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F85C5790-4977-41F3-9768-3494CA317650} = {89676D7F-59B3-4E41-9A13-269083E064E5}
 	EndGlobalSection
 EndGlobal

@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TemplateReport>
-  <ItemTemplates />
-  <ProjectTemplates>
-    <ProjectTemplate Path="..\SPMeta2.VS.CSharp\_Definitions\_project.vstemplate.xml" Name="SPMeta2 Foundation Model" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
-  </ProjectTemplates>
-  <Snippets />
-</TemplateReport>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{645A0056-95A8-4C14-9EFC-FBC9F727BBA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SPMeta2.VS.CSharp</RootNamespace>
+    <AssemblyName>SPMeta2.VS.CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Consts\M2PrjPrefixConsts.cs" />
+    <Compile Include="Definitions\Solutions\M2PrjPrefixSandboxSolutions.cs" />
+    <Compile Include="Definitions\DisplayTemplates\M2PrjPrefixSearchDisplayTemplates.cs" />
+    <Compile Include="Definitions\Features\M2PrjPrefixWebFeatures.cs" />
+    <Compile Include="Definitions\Features\M2PrjPrefixSiteFeatures.cs" />
+    <Compile Include="Definitions\IA\M2PrjPrefixLists.cs" />
+    <Compile Include="Definitions\IA\M2PrjPrefixListViews.cs" />
+    <Compile Include="Definitions\IA\M2PrjPrefixContentTypes.cs" />
+    <Compile Include="Definitions\IA\M2PrjPrefixFields.cs" />
+    <Compile Include="Definitions\IA\M2PrjPrefixWebs.cs" />
+    <Compile Include="Definitions\Navigation\M2PrjPrefixQuickNavigationNodes.cs" />
+    <Compile Include="Definitions\Navigation\M2PrjPrefixWebNavigationSettings.cs" />
+    <Compile Include="Definitions\Navigation\M2PrjPrefixTopNavigationNodes.cs" />
+    <Compile Include="Definitions\Pages\M2PrjPrefixWelcomePages.cs" />
+    <Compile Include="Definitions\Pages\M2PrjPrefixWikiPages.cs" />
+    <Compile Include="Definitions\Pages\M2PrjPrefixWebPartPages.cs" />
+    <Compile Include="Definitions\Pages\M2PrjPrefixPublishingPages.cs" />
+    <Compile Include="Definitions\Security\M2PrjPrefixSecurityRoles.cs" />
+    <Compile Include="Definitions\Security\M2PrjPrefixSecurityGroups.cs" />
+    <Compile Include="Definitions\Taxonomy\M2PrjPrefixTaxonomyTerms.cs" />
+    <Compile Include="Definitions\UI\M2PrjPrefixMasterPages.cs" />
+    <Compile Include="Definitions\UI\M2PrjPrefixPublishingPageLayouts.cs" />
+    <Compile Include="Definitions\Taxonomy\M2PrjPrefixTaxonomyStores.cs" />
+    <Compile Include="Definitions\Taxonomy\M2PrjPrefixTaxonomyTermSets.cs" />
+    <Compile Include="Definitions\Taxonomy\M2PrjPrefixTaxonomyTermGroups.cs" />
+    <Compile Include="Definitions\UI\M2PrjPrefixWebparts.cs" />
+    <Compile Include="Definitions\UI\M2PrjPrefixUserCustomActions.cs" />
+    <Compile Include="Extensions\ModelNodeSyntaxExtensions.cs" />
+    <Compile Include="Extensions\ModelNodeExtensions.cs" />
+    <Compile Include="Models\M2PrjPrefixSiteModel.cs" />
+    <Compile Include="Models\M2PrjPrefixWebModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\M2PrjPrefixProvisionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\SubWebs\" />
+    <Folder Include="Modules\Implicit\Style Library\" />
+    <Folder Include="PSScripts\" />
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
+    <Content Include="sw-file-icon.png" />
+    <Content Include="_Definitions\_project.vstemplate.xml" />
+    <Content Include="_preprocess.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Packages\spmeta2.csom.foundation-v16.1.1.100.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard-v16.1.1.100.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard.1.1.100.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.foundation.1.1.100.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.standard.1.1.100.nupkg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
