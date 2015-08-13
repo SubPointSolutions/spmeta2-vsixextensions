@@ -1,7 +1,7 @@
 # spmeta2-vsixextensions
 Visual Studio integration for SPMeta2 library - project / item templates, debugger visualizer, etc..
 
-The below screens say it all, working to get it release soon. Stay in touch and let us know whatyou think - https://www.yammer.com/spmeta2feedback
+The below screens say it all, working to get it released soon. Stay in touch and let us know whatyou think - https://www.yammer.com/spmeta2feedback
 
 ### Fire up a new project
 ![](https://github.com/SubPointSolutions/spmeta2-vsixextensions/blob/dev/Assets/img/M2.VS-1.png)
