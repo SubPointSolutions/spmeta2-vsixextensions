@@ -10,11 +10,13 @@
   </Installation>
   <Dependencies>
     <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency d:Source="Installed" Id="Microsoft.VisualStudio.MPF.12.0" DisplayName="Visual Studio MPF 12.0" Version="[12.0,13.0)" />
   </Dependencies>
   <Assets>
     <Asset Type="Microsoft.VisualStudio.ItemTemplate" Path="Output\ItemTemplates" />
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" Path="Output\ProjectTemplates" />
     <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="SPMeta2.VS.Tooling" Path="|SPMeta2.VS.Tooling|" AssemblyName="|SPMeta2.VS.Tooling;AssemblyName|" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="m2.pkgdef" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>

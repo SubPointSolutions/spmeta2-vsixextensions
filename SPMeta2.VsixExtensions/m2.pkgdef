@@ -7,3 +7,17 @@
 // C# snippets
 [$RootKey$\Languages\CodeExpansions\CSharp\Paths]
 "SPMeta2"="$PackageFolder$\Snippets\CSharp\SPMeta2"
+
+// packages
+[$RootKey$\InstalledProducts\SPMeta2VsixExtensions]
+@="M2 Extensions"
+"PID"="1.0"
+"ProductDetails"="SPMeta2 extensions for Visual Studio"
+[$RootKey$\Packages\{CBBB8ABF-B5EA-460E-94CB-5757D2C885F9}]
+@="VSPackage1Package"
+"InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL"
+"Class"="SPMeta2.VS.Tooling.Packages.M2Package"
+"CodeBase"="$PackageFolder$\SPMeta2.VS.Tooling.dll"
+[$RootKey$\AutoLoadPackages\{f1536ef8-92ec-443c-9ed7-fdadf150da82}]
+"{CBBB8ABF-B5EA-460E-94CB-5757D2C885F9}"=dword:00000000
+
