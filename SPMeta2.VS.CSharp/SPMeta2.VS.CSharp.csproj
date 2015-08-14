@@ -95,6 +95,18 @@
     <Content Include="Packages\spmeta2.ssom.foundation.1.1.100.nupkg" />
     <Content Include="Packages\spmeta2.ssom.standard.1.1.100.nupkg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Packages\SPMeta2.Core.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.Core.Standard.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Foundation-v16.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Foundation.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Standard-v16.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Standard.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Foundation-v14.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

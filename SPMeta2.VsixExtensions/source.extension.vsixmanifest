@@ -18,5 +18,6 @@
     <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="SPMeta2.VS.Tooling" Path="|SPMeta2.VS.Tooling|" AssemblyName="|SPMeta2.VS.Tooling;AssemblyName|" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="File" Path="m2.pkgdef" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="SPMeta2.VS.Visualizers" Path="|SPMeta2.VS.Visualizers|" AssemblyName="|SPMeta2.VS.Visualizers;AssemblyName|" />
   </Assets>
 </PackageManifest>
