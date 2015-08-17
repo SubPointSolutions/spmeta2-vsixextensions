@@ -141,12 +141,12 @@ namespace SPMeta2.VS.Tooling.Wizards
 
                 ProjectPrefix = _options.ProjectPrefix;
 
-                
-                // replacementsDictionary.Add("$M2PrjPrefix$", _options.ProjectPrefix);
+
+                // replacementsDictionary.Add("M2ProjectPrefix", _options.ProjectPrefix);
                 //replacementsDictionary.Add("$M2Prefix$", _options.);
 
                 // legacy one
-                replacementsDictionary.Add("$M2PrjPrefix$", _options.ProjectPrefix);
+                replacementsDictionary.Add("M2ProjectPrefix", _options.ProjectPrefix);
 
                 // sync M2Prj settings
                 var props = _options.GetType().GetProperties();
@@ -160,15 +160,22 @@ namespace SPMeta2.VS.Tooling.Wizards
                         propValueString = propValue.ToString();
 
                     var propName = string.Format("$M2{0}$", prop.Name);
+                    var normalPropName = string.Format("M2{0}", prop.Name);
 
                     if (!replacementsDictionary.Keys.Contains(propName))
                         replacementsDictionary.Add(propName, propValueString);
                     else
                         replacementsDictionary[propName] = propValueString;
+
+                    if (!replacementsDictionary.Keys.Contains(normalPropName))
+                        replacementsDictionary.Add(normalPropName, propValueString);
+                    else
+                        replacementsDictionary[normalPropName] = propValueString;
                 }
 
                 // sync additional stuff
                 replacementsDictionary.Add("$rootnamespace$", replacementsDictionary["$safeprojectname$"]);
+                replacementsDictionary.Add("M2RootNamespace", replacementsDictionary["$safeprojectname$"]);
 
                 HandleNuGetPackages(_options, automationObject, replacementsDictionary, runKind, customParams);
             }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Services
+namespace M2RootNamespace.Services
 {
-    public class $M2PrjPrefix$ProvisionService
+    public class M2ProjectPrefixProvisionService
     {
     }
 }

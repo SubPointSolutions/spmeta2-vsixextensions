@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.IA
+namespace M2RootNamespace.Definitions.IA
 {
-    class $M2PrjPrefix$Fields
+    public static class M2ProjectPrefixContentTypes
     {
     }
 }

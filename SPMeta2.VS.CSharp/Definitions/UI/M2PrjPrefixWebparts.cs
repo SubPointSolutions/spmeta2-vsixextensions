@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.UI
+namespace M2RootNamespace.Definitions.UI
 {
-    public static class $M2PrjPrefix$Webparts
+    public static class M2ProjectPrefixWebparts
     {
     }
 }

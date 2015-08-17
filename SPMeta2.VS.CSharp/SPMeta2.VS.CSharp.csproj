@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SPMeta2">
+      <HintPath>..\packages\SPMeta2.Core.1.2.0-beta2\lib\net45\SPMeta2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -75,11 +78,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\SubWebs\" />
-    <Folder Include="Modules\Implicit\Style Library\" />
-    <Folder Include="PSScripts\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\angular\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\backbone\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\bootstrap\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\caml.js\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\ember\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery-ui\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\knockout\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\moment.js\" />
+    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\spservices\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\ContactForm\contact-form.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\Yammer\yammer-group-feed.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
     <Content Include="sw-file-icon.png" />
     <Content Include="_Definitions\_project.vstemplate.xml" />
@@ -106,6 +123,11 @@
     <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="PSScripts\05.Recreate site collections.ps1" />
+    <None Include="PSScripts\10.Activate Site Loading.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

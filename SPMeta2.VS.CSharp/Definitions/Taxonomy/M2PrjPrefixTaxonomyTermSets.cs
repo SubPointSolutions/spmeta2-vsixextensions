@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Taxonomy
+namespace M2RootNamespace.Definitions.Taxonomy
 {
-    public static class $M2PrjPrefix$TaxonomyTermSets
+    public static class M2ProjectPrefixTaxonomyTermSets
     {
     }
 }

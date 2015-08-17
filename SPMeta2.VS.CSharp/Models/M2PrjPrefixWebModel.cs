@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Models
+namespace M2RootNamespace.Models
 {
-    class $M2PrjPrefix$WebModel
+    public static class M2ProjectPrefixWebModel
     {
     }
 }

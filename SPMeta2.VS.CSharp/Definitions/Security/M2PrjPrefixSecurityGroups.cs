@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Security
+namespace M2RootNamespace.Definitions.Security
 {
-    public static class $M2PrjPrefix$SecurityGroups
+    public static class M2ProjectPrefixSecurityGroups
     {
     }
 }

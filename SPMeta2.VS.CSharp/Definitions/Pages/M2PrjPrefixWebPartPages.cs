@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Pages
+namespace M2RootNamespace.Definitions.Pages
 {
-    public static class $M2PrjPrefix$WebPartPages
+    public static class M2ProjectPrefixWebPartPages
     {
     }
 }

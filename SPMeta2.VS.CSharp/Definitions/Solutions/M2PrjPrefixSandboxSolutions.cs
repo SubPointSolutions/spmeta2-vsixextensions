@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Solutions
+namespace M2RootNamespace.Definitions.Solutions
 {
-    public static class $M2PrjPrefix$SandboxSolutions
+    public static class M2ProjectPrefixSandboxSolutions
     {
     }
 }

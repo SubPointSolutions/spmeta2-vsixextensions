@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Features
+namespace M2RootNamespace.Definitions.Features
 {
-    public static class $M2PrjPrefix$SiteFeatures
+    public static class M2ProjectPrefixSiteFeatures
     {
     }
 }

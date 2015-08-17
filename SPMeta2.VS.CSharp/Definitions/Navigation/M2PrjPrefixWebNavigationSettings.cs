@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.Navigation
+namespace M2RootNamespace.Definitions.Navigation
 {
-    public static class $M2PrjPrefix$WebNavigationSettings
+    public static class M2ProjectPrefixWebNavigationSettings
     {
     }
 }

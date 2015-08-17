@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.DisplayTemplates
+namespace M2RootNamespace.Definitions.DisplayTemplates
 {
-    public static class $M2PrjPrefix$SearchDisplayTemplates
+    public static class M2ProjectPrefixSearchDisplayTemplates
     {
     }
 }

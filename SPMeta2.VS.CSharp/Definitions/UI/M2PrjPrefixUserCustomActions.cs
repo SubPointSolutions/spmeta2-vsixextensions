@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace $rootnamespace$.Definitions.UI
+namespace M2RootNamespace.Definitions.UI
 {
-    public static class $M2PrjPrefix$UserCustomActions
+    public static class M2ProjectPrefixUserCustomActions
     {
     }
 }
