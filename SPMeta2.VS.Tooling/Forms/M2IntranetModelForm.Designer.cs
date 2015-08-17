@@ -41,6 +41,10 @@
             this.rbPlatformSP2013CSOM = new System.Windows.Forms.RadioButton();
             this.rbPlatformO365CSOM = new System.Windows.Forms.RadioButton();
             this.gbActions = new System.Windows.Forms.GroupBox();
+            this.tbSiteFieldsGroup = new System.Windows.Forms.TextBox();
+            this.tbContentTypesGroup = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.gbProjectSettings.SuspendLayout();
             this.gbTargetPlatform.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -50,7 +54,7 @@
             // 
             // tbProjectPrefix
             // 
-            this.tbProjectPrefix.Location = new System.Drawing.Point(92, 25);
+            this.tbProjectPrefix.Location = new System.Drawing.Point(121, 25);
             this.tbProjectPrefix.Name = "tbProjectPrefix";
             this.tbProjectPrefix.Size = new System.Drawing.Size(150, 20);
             this.tbProjectPrefix.TabIndex = 0;
@@ -76,12 +80,16 @@
             // 
             // gbProjectSettings
             // 
+            this.gbProjectSettings.Controls.Add(this.tbContentTypesGroup);
+            this.gbProjectSettings.Controls.Add(this.tbSiteFieldsGroup);
+            this.gbProjectSettings.Controls.Add(this.label3);
+            this.gbProjectSettings.Controls.Add(this.label2);
             this.gbProjectSettings.Controls.Add(this.label1);
             this.gbProjectSettings.Controls.Add(this.tbProjectPrefix);
             this.gbProjectSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbProjectSettings.Location = new System.Drawing.Point(0, 0);
             this.gbProjectSettings.Name = "gbProjectSettings";
-            this.gbProjectSettings.Size = new System.Drawing.Size(499, 61);
+            this.gbProjectSettings.Size = new System.Drawing.Size(499, 108);
             this.gbProjectSettings.TabIndex = 4;
             this.gbProjectSettings.TabStop = false;
             this.gbProjectSettings.Text = "Project Settings";
@@ -91,7 +99,7 @@
             this.gbTargetPlatform.Controls.Add(this.panel2);
             this.gbTargetPlatform.Controls.Add(this.panel1);
             this.gbTargetPlatform.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbTargetPlatform.Location = new System.Drawing.Point(0, 61);
+            this.gbTargetPlatform.Location = new System.Drawing.Point(0, 108);
             this.gbTargetPlatform.Name = "gbTargetPlatform";
             this.gbTargetPlatform.Size = new System.Drawing.Size(499, 106);
             this.gbTargetPlatform.TabIndex = 5;
@@ -175,17 +183,49 @@
             // 
             this.gbActions.Controls.Add(this.bOk);
             this.gbActions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbActions.Location = new System.Drawing.Point(0, 167);
+            this.gbActions.Location = new System.Drawing.Point(0, 214);
             this.gbActions.Name = "gbActions";
-            this.gbActions.Size = new System.Drawing.Size(499, 52);
+            this.gbActions.Size = new System.Drawing.Size(499, 50);
             this.gbActions.TabIndex = 6;
             this.gbActions.TabStop = false;
+            // 
+            // tbSiteFieldsGroup
+            // 
+            this.tbSiteFieldsGroup.Location = new System.Drawing.Point(121, 51);
+            this.tbSiteFieldsGroup.Name = "tbSiteFieldsGroup";
+            this.tbSiteFieldsGroup.Size = new System.Drawing.Size(150, 20);
+            this.tbSiteFieldsGroup.TabIndex = 4;
+            // 
+            // tbContentTypesGroup
+            // 
+            this.tbContentTypesGroup.Location = new System.Drawing.Point(121, 77);
+            this.tbContentTypesGroup.Name = "tbContentTypesGroup";
+            this.tbContentTypesGroup.Size = new System.Drawing.Size(150, 20);
+            this.tbContentTypesGroup.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Site fields group:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Content types group:";
             // 
             // M2IntranetModelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 219);
+            this.ClientSize = new System.Drawing.Size(499, 264);
             this.Controls.Add(this.gbActions);
             this.Controls.Add(this.gbTargetPlatform);
             this.Controls.Add(this.gbProjectSettings);
@@ -221,5 +261,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton rbStandard;
         private System.Windows.Forms.RadioButton rbFoundation;
+        private System.Windows.Forms.TextBox tbContentTypesGroup;
+        private System.Windows.Forms.TextBox tbSiteFieldsGroup;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

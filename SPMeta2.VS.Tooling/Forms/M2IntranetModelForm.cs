@@ -24,6 +24,9 @@ namespace SPMeta2.VS.Tooling.Forms
         private void InitDefaultOptions()
         {
             tbProjectPrefix.Text = Options.ProjectPrefix;
+
+            tbSiteFieldsGroup.Text = Options.SiteFieldsGroupName;
+            tbContentTypesGroup.Text = Options.SiteContentTypesGroupName;
         }
 
         private void bOk_Click(object sender, EventArgs e)
@@ -42,6 +45,13 @@ namespace SPMeta2.VS.Tooling.Forms
             // global prefix
             if (!string.IsNullOrEmpty(tbProjectPrefix.Text))
                 Options.ProjectPrefix = tbProjectPrefix.Text.Trim();
+
+            // consts
+            if (!string.IsNullOrEmpty(tbSiteFieldsGroup.Text))
+                Options.SiteFieldsGroupName = tbSiteFieldsGroup.Text.Trim();
+
+            if (!string.IsNullOrEmpty(tbProjectPrefix.Text))
+                Options.SiteContentTypesGroupName = tbContentTypesGroup.Text.Trim();
 
             // platform
             if (rbPlatformSP2013SSOM.Checked)

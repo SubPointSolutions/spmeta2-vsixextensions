@@ -141,7 +141,33 @@ namespace SPMeta2.VS.Tooling.Wizards
 
                 ProjectPrefix = _options.ProjectPrefix;
 
+                
+                // replacementsDictionary.Add("$M2PrjPrefix$", _options.ProjectPrefix);
+                //replacementsDictionary.Add("$M2Prefix$", _options.);
+
+                // legacy one
                 replacementsDictionary.Add("$M2PrjPrefix$", _options.ProjectPrefix);
+
+                // sync M2Prj settings
+                var props = _options.GetType().GetProperties();
+
+                foreach (var prop in props)
+                {
+                    var propValue = prop.GetValue(_options);
+                    var propValueString = string.Empty;
+
+                    if (propValue != null)
+                        propValueString = propValue.ToString();
+
+                    var propName = string.Format("$M2{0}$", prop.Name);
+
+                    if (!replacementsDictionary.Keys.Contains(propName))
+                        replacementsDictionary.Add(propName, propValueString);
+                    else
+                        replacementsDictionary[propName] = propValueString;
+                }
+
+                // sync additional stuff
                 replacementsDictionary.Add("$rootnamespace$", replacementsDictionary["$safeprojectname$"]);
 
                 HandleNuGetPackages(_options, automationObject, replacementsDictionary, runKind, customParams);
@@ -237,7 +263,7 @@ namespace SPMeta2.VS.Tooling.Wizards
         public bool ShouldAddProjectItem(string filePath)
         {
             return true;
-        } 
+        }
 
         #endregion
     }

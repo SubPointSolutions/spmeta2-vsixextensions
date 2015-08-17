@@ -22,17 +22,32 @@ namespace SPMeta2.VS.Tooling.Options
 
     public class M2IntranetProjectOptions
     {
+        #region constructors
+
         public M2IntranetProjectOptions()
         {
             ProjectPrefix = "Intr";
+
+            SiteFieldsGroupName = "_Intr";
+            SiteContentTypesGroupName = "_Intr";
+
             ProjectPlatform = ProjectPlatform.SP2013CSOM;
             ProjectType = ProjectType.Standard;
         }
+
+        #endregion
+
+        #region properties
 
         public string ProjectPrefix { get; set; }
 
         public ProjectPlatform ProjectPlatform { get; set; }
         public ProjectType ProjectType { get; set; }
+
+        public string SiteFieldsGroupName { get; set; }
+        public string SiteContentTypesGroupName { get; set; }
+
+        #endregion
 
     }
 }

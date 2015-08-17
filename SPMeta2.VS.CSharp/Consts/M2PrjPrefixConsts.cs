@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SPMeta2.VS.CSharp.Consts
+namespace $rootnamespace$.Consts
 {
-    class OConsts
+    public static class $M2PrjPrefix$Consts
     {
+        public static string DefaultSiteFieldsGroup = "$M2SiteFieldsGroupName$";
+        public static string DefaultSiteContentTypesGroup = "$M2SiteContentTypesGroupName$"; 
     }
 }
