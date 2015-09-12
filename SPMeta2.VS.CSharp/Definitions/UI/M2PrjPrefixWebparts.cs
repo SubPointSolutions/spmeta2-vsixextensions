@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using M2RootNamespace.Definitions.IA;
 using SPMeta2.Definitions.Webparts;
+using SPMeta2.Enumerations;
 
 namespace M2RootNamespace.Definitions.UI
 {
@@ -16,24 +18,86 @@ namespace M2RootNamespace.Definitions.UI
         // SharePoint Foundation web part are defined under 'SPMeta2.Definitions.Webparts'
         // SharePoint Standard web part are under 'SPMeta2.Standard.Definitions.Webparts'
 
-        // Id and Title are to be always defined
+        // Id, Title, ZoneId and ZoneIndex are to be always defined
 
         // More information can be found here
         // * WebPartDefinition - http://docs.subpointsolutions.com/spmeta2/definitions/sharepoint-foundation/webpartdefinition
         // * Provision scenarios - http://docs.subpointsolutions.com/spmeta2/scenarios/
 
-        public static ContentEditorWebPartDefinition AboutCompanyContent = new ContentEditorWebPartDefinition
+        public static XsltListViewWebPartDefinition SalesTasks = new XsltListViewWebPartDefinition
         {
-            Title = "About Company",
-            Id = "crmAboutCompany",
-            Content = "Some nice content about the company"
+            Title = "Sales Tasks",
+            Id = "intrSalesTasks",
+
+            ZoneId = "Header",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ListTitle = M2ProjectPrefixLists.SalesTasks.Title
         };
 
-        public static ContentEditorWebPartDefinition ContactForm = new ContentEditorWebPartDefinition
+        public static XsltListViewWebPartDefinition LastDocuments = new XsltListViewWebPartDefinition
         {
-            Title = "How Tos",
-            Id = "crmHowTow",
-            ContentLink = "~sitecollection/Style Library/M2ProjectPrefix.Intranet/3rd part/ContactForm/contact-form.html",
+            Title = "New Documents",
+            Id = "intrLastDocuments",
+
+            ZoneId = "LeftColumn",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ListTitle = M2ProjectPrefixLists.CompanyDocuments.Title,
+            ViewName = M2ProjectPrefixListViews.LastTenDocumentsMainPage.Title
         };
+
+        public static XsltListViewWebPartDefinition LastOrders = new XsltListViewWebPartDefinition
+        {
+            Title = "New Orders",
+            Id = "intrLastOrders",
+
+            ZoneId = "MiddleColumn",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ListTitle = M2ProjectPrefixLists.Orders.Title,
+            ViewName = M2ProjectPrefixListViews.Last10OrdersMainPage.Title
+        };
+
+        public static XsltListViewWebPartDefinition NewServices = new XsltListViewWebPartDefinition
+        {
+            Title = "New Services",
+            Id = "intrNewServices",
+
+            ZoneId = "RightColumn",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ListTitle = M2ProjectPrefixLists.Services.Title,
+            ViewName = M2ProjectPrefixListViews.LastTenServices.Title
+        };
+
+        public static ListViewWebPartDefinition SalesEvents = new ListViewWebPartDefinition
+        {
+            Title = "Sales Events",
+            Id = "intrSalesEvents",
+
+            ZoneId = "Footer",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ListTitle = M2ProjectPrefixLists.SalesEvents.Title
+        };
+
+
+        //public static ContentEditorWebPartDefinition AboutSalesContent = new ContentEditorWebPartDefinition
+        //{
+        //    Title = "About Sales",
+        //    Id = "intrAboutSales",
+
+        //    ZoneId = "RightColumn",
+        //    ZoneIndex = 10,
+
+        //    ChromeType = BuiltInPartChromeType.TitleOnly,
+        //    ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/AboutSales/about-sales.html",
+        //};
     }
 }

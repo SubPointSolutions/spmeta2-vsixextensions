@@ -68,6 +68,21 @@ namespace M2RootNamespace.Definitions.IA
             }
         };
 
+        public static ListViewDefinition Last10OrdersMainPage = new ListViewDefinition
+        {
+            Title = "Last 10 Orders Main Pages",
+            RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            IsDefault = false,
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.DocIcon,
+                BuiltInInternalFieldNames.LinkFilename,
+                M2ProjectPrefixFields.OrderAddressState.InternalName,
+                M2ProjectPrefixFields.OrderPrice.InternalName,
+            }
+        };
+
         public static ListViewDefinition AllProducts = new ListViewDefinition
         {
             Title = "All Products",
@@ -94,8 +109,8 @@ namespace M2RootNamespace.Definitions.IA
             Fields = new Collection<string>
             {
                 BuiltInInternalFieldNames.LinkFilename,
-                BuiltInInternalFieldNames.TaskDueDate,
-                BuiltInInternalFieldNames.AssignedTo,
+                M2ProjectPrefixFields.ProductDescription.InternalName,
+                M2ProjectPrefixFields.ProductType.InternalName,
             }
         };
 

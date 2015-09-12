@@ -75,6 +75,11 @@
     <Compile Include="Models\M2PrjPrefixSiteModel.cs" />
     <Compile Include="Models\M2PrjPrefixRootWebModel.cs" />
     <Compile Include="Models\SubWebs\M2PrjPrefixHowTosWebModel.cs" />
+    <Compile Include="Modules\StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\M2PrjPrefixProvisionService.cs" />
   </ItemGroup>
@@ -84,6 +89,9 @@
   <ItemGroup>
     <Content Include="m2.png" />
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jquery-1.11.3.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\AboutSales\about-sales.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\ContactForm\contact-form.html">
@@ -119,6 +127,12 @@
     <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Modules\StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

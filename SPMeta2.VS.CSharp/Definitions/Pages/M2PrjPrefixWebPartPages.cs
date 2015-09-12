@@ -5,33 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using SPMeta2.Definitions;
 using SPMeta2.Enumerations;
+using SPMeta2.VS.CSharp.Modules;
 
 namespace M2RootNamespace.Definitions.Pages
 {
     public static class M2ProjectPrefixWebPartPages
     {
-        // use BuiltInWebPartPageTemplates to refer OOTB page layouts
-        // use CustomPageLayout to define your page as needed
-
-        public static WebPartPageDefinition SalesDashboard = new WebPartPageDefinition
+        public static WebPartPageDefinition LandingPage = new WebPartPageDefinition
         {
-            Title = "Sales Dashboard",
-            FileName = "SalesDashboard.aspx",
-            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd1
-        };
-
-        public static WebPartPageDefinition RevenueDashboard = new WebPartPageDefinition
-        {
-            Title = "Revenue Dashboard",
-            FileName = "RevenueDashboard.aspx",
-            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd2
+            Title = "Landing Page",
+            FileName = "LandingPage.aspx",
+            CustomPageLayout = StringResources.CustomWebpartPageMarkup
         };
 
         public static WebPartPageDefinition AboutThisSite = new WebPartPageDefinition
         {
             Title = "About This Site",
             FileName = "AboutThisSite.aspx",
-            PageLayoutTemplate = BuiltInWebPartPageTemplates.spstd2
+            CustomPageLayout = StringResources.CustomWebpartPageMarkup
         };
     }
 }

@@ -16,12 +16,7 @@ namespace M2RootNamespace.Definitions.Pages
 
         public static WelcomePageDefinition HomeLandingPage = new WelcomePageDefinition
         {
-            Url = "SitePages/SalesDashboard.aspx"
-        };
-
-        public static WelcomePageDefinition RevenueSiteLandingPage = new WelcomePageDefinition
-        {
-            Url = UrlUtility.CombineUrl(BuiltInListDefinitions.Pages.CustomUrl, M2ProjectPrefixWebPartPages.RevenueDashboard.FileName)
+            Url = UrlUtility.CombineUrl("SitePages", M2ProjectPrefixWebPartPages.LandingPage.FileName)
         };
     }
 }

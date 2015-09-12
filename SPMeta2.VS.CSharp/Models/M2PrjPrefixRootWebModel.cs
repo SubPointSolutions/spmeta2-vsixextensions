@@ -8,6 +8,8 @@ using M2RootNamespace.Consts;
 using M2RootNamespace.Definitions.Features;
 using M2RootNamespace.Definitions.IA;
 using M2RootNamespace.Definitions.Navigation;
+using M2RootNamespace.Definitions.Pages;
+using M2RootNamespace.Definitions.UI;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Extensions;
 using SPMeta2.Models;
@@ -41,58 +43,74 @@ namespace M2RootNamespace.Models
             var model = SPMeta2Model.NewWebModel(web =>
             {
                 web
-                  .AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy)
-                  .AddWebFeature(M2ProjectPrefixWebFeatures.EnableTeamCollabirationLists)
+                    .AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy)
+                    .AddWebFeature(M2ProjectPrefixWebFeatures.EnableTeamCollabirationLists)
 
-                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.CompanyDocuments)
-                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleTasks)
-                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleEvents)
+                    .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.CompanyDocuments)
+                    .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleTasks)
+                    .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleEvents)
 
-                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.CompanyDocuments)
-                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Services)
-                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Orders)
-                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleTasks)
-                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleEvents)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.CompanyDocuments)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Services)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Orders)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleTasks)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleEvents)
 
-                  .AddList(M2ProjectPrefixLists.CompanyDocuments, list =>
-                  {
-                      list
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.CompanyDocument)
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.SalesProposal)
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductDocument)
+                    .AddList(M2ProjectPrefixLists.CompanyDocuments, list =>
+                    {
+                        list
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.CompanyDocument)
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.SalesProposal)
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductDocument)
 
-                          .AddListView(M2ProjectPrefixListViews.LastTenDocuments)
-                          .AddListView(M2ProjectPrefixListViews.LastTenDocumentsMainPage)
+                            .AddListView(M2ProjectPrefixListViews.LastTenDocuments)
+                            .AddListView(M2ProjectPrefixListViews.LastTenDocumentsMainPage)
 
-                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.CompanyDocument);
-                  })
-                  .AddList(M2ProjectPrefixLists.Orders, list =>
-                  {
-                      list
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.OrderDocument)
-                          .AddListView(M2ProjectPrefixListViews.Last25Orders)
+                            .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.CompanyDocument);
+                    })
+                    .AddList(M2ProjectPrefixLists.Orders, list =>
+                    {
+                        list
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.OrderDocument)
+                            .AddListView(M2ProjectPrefixListViews.Last25Orders)
+                            .AddListView(M2ProjectPrefixListViews.Last10OrdersMainPage)
 
-                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.OrderDocument);
-                  })
-                  .AddList(M2ProjectPrefixLists.Services, list =>
-                  {
-                      list
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductOrService)
-                          .AddListView(M2ProjectPrefixListViews.AllProducts)
+                            .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.OrderDocument);
+                    })
+                    .AddList(M2ProjectPrefixLists.Services, list =>
+                    {
+                        list
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductOrService)
+                            .AddListView(M2ProjectPrefixListViews.AllProducts)
+                            .AddListView(M2ProjectPrefixListViews.LastTenServices)
 
-                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.ProductOrService);
-                  })
-                  .AddList(M2ProjectPrefixLists.SalesTasks, list =>
-                  {
+                            .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.ProductOrService);
+                    })
+                    .AddList(M2ProjectPrefixLists.SalesTasks, list =>
+                    {
 
-                  })
-                  .AddList(M2ProjectPrefixLists.SalesEvents, list =>
-                  {
-                      list
-                          .AddContentTypeLink(M2ProjectPrefixContentTypes.SaleEvents)
+                    })
+                    .AddList(M2ProjectPrefixLists.SalesEvents, list =>
+                    {
+                        list
+                            .AddContentTypeLink(M2ProjectPrefixContentTypes.SaleEvents)
 
-                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.SaleEvents);
-                  });
+                            .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.SaleEvents);
+                    })
+                    .AddHostList(BuiltInListDefinitions.SitePages, list =>
+                    {
+                        list.AddWebPartPage(M2ProjectPrefixWebPartPages.LandingPage, page =>
+                        {
+                            page
+                                .AddWebPart(M2ProjectPrefixWebparts.NewServices)
+                                .AddWebPart(M2ProjectPrefixWebparts.SalesTasks)
+                                .AddWebPart(M2ProjectPrefixWebparts.LastDocuments)
+                                .AddWebPart(M2ProjectPrefixWebparts.LastOrders)
+                                .AddWebPart(M2ProjectPrefixWebparts.SalesEvents);
+                        });
+                    })
+
+                    .AddWelcomePage(M2ProjectPrefixWelcomePages.HomeLandingPage);
             });
 
             return model;
