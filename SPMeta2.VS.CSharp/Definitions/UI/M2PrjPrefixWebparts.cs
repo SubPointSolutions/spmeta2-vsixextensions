@@ -97,7 +97,7 @@ namespace M2RootNamespace.Definitions.UI
             ZoneIndex = 10,
 
             ChromeType = BuiltInPartChromeType.TitleOnly,
-            ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/AboutThisSite/about-site.html",
+            ContentLink = "~sitecollection/Style Library/M2ProjectPrefix.Intranet/AboutThisSite/about-site.html",
         };
 
         public static ContentEditorWebPartDefinition M2YammerFeed = new ContentEditorWebPartDefinition
@@ -109,7 +109,7 @@ namespace M2RootNamespace.Definitions.UI
             ZoneIndex = 10,
 
             ChromeType = BuiltInPartChromeType.TitleOnly,
-            ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/Yammer/yammer-group-feed.html",
+            ContentLink = "~sitecollection/Style Library/M2ProjectPrefix.Intranet/Yammer/yammer-group-feed.html",
         };
     }
 }

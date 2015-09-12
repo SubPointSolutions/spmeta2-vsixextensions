@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using M2RootNamespace.Models;
 using M2RootNamespace.Models.SubWebs;
-using Microsoft.SharePoint;
-using SPMeta2.SSOM.Services;
+using Microsoft.SharePoint.Client;
+using SPMeta2.CSOM.Services;
+using SPMeta2.CSOM.Standard.Services;
 
 namespace M2RootNamespace.Services
 {
-    public class M2ProjectPrefixSSOMProvisionService : SSOMProvisionService
+    public class M2ProjectPrefixStandardCSOMProvisionService : StandardCSOMProvisionService
     {
         #region options
 
@@ -25,9 +26,9 @@ namespace M2RootNamespace.Services
 
         #region methods
 
-        public void DeployIntranet(SPSite site)
+        public void DeployIntranet(ClientContext context)
         {
-            DeployIntranet(site, new Options
+            DeployIntranet(context, new Options
             {
                 DeploySite = true,
                 DeployRootWeb = true,
@@ -35,17 +36,19 @@ namespace M2RootNamespace.Services
             });
         }
 
-        public void DeployIntranet(SPSite site, Options options)
+        public void DeployIntranet(ClientContext context, Options options)
         {
             // pushing site model
             if (options.DeploySite)
             {
                 var siteModel = new M2ProjectPrefixSiteModel();
 
-                this.DeploySiteModel(site, siteModel.GetSandboxSolutionsModel());
-                this.DeploySiteModel(site, siteModel.GetSiteFeaturesModel());
-                this.DeploySiteModel(site, siteModel.GetSiteSecurityModel());
-                this.DeploySiteModel(site, siteModel.GetFieldsAndContentTypesModel());
+                this.DeploySiteModel(context, siteModel.GetSiteFeaturesModel());
+                this.DeploySiteModel(context, siteModel.GetUserCustomActionModel());
+                this.DeploySiteModel(context, siteModel.GetSiteSecurityModel());
+
+                this.DeploySiteModel(context, siteModel.GetFieldsAndContentTypesModel());
+                this.DeploySiteModel(context, siteModel.GetSandboxSolutionsModel());
             }
 
             // pushing root web model
@@ -53,16 +56,15 @@ namespace M2RootNamespace.Services
             {
                 var rootWebModel = new M2ProjectPrefixRootWebModel();
 
-                this.DeployWebModel(site.RootWeb, rootWebModel.GetStyleLibraryModel());
-                this.DeployWebModel(site.RootWeb, rootWebModel.GetModel());
+                this.DeployWebModel(context, rootWebModel.GetStyleLibraryModel());
+                this.DeployWebModel(context, rootWebModel.GetModel());
             }
 
             // pushing 'How-tow' sub web
             if (options.DeployHowTosWeb)
             {
                 var howTosWebModel = new M2ProjectPrefixHowTosWebModel();
-
-                this.DeployWebModel(site.RootWeb, howTosWebModel.GetModel());
+                this.DeployWebModel(context, howTosWebModel.GetModel());
             }
         }
 

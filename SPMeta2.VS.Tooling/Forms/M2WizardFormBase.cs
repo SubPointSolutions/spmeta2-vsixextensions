@@ -13,4 +13,15 @@ namespace SPMeta2.VS.Tooling.Forms
     {
         TProjectOptions ProjectOptions { get; set; }
     }
+
+    public class HiddenForm<TProjectOptions> : Form, IM2WizardForm<TProjectOptions>
+        where TProjectOptions : M2ProjectOptions, new()
+    {
+        public HiddenForm()
+        {
+            ProjectOptions = new TProjectOptions();
+        }
+
+        public TProjectOptions ProjectOptions { get; set; }
+    }
 }

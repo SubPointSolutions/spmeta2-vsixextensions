@@ -28,7 +28,7 @@ namespace M2RootNamespace.Models.SubWebs
     /// 
     /// Read more here - http://docs.subpointsolutions.com/spmeta2/models/
     /// </summary>
-    public class M2PrjPrefixHowTosWebModel
+    public class M2ProjectPrefixHowTosWebModel
     {
         public ModelNode GetModel()
         {

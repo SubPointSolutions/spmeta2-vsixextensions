@@ -142,7 +142,7 @@ namespace M2RootNamespace.Models
             var model = SPMeta2Model.NewSiteModel(site =>
             {
                 site.AddUserCustomAction(M2ProjectPrefixUserCustomActions.jQuery);
-                site.AddUserCustomAction(M2ProjectPrefixUserCustomActions.M2PrjPrefixJs);
+                site.AddUserCustomAction(M2ProjectPrefixUserCustomActions.M2ProjectPrefixJs);
             });
 
             return model;

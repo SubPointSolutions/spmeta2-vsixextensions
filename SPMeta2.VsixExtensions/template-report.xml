@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TemplateReport>
   <ItemTemplates>
+    <ItemTemplate Path="ItemTemplates\SPMeta2\AppSettings\Definitions\CSharp.vstemplate" Name="AppSettings" Description="" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\SPMeta2\ContentTypes\Definitions\CSharp.vstemplate" Name="ContentTypes" Description="" ProjectType="CSharp" ProjectSubType="" />
     <ItemTemplate Path="ItemTemplates\SPMeta2\Fields\Definitions\CSharp.vstemplate" Name="Fields" Description="" ProjectType="CSharp" ProjectSubType="" />
   </ItemTemplates>

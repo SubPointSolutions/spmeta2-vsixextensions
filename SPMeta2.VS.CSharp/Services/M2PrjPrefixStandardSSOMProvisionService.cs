@@ -7,10 +7,11 @@ using M2RootNamespace.Models;
 using M2RootNamespace.Models.SubWebs;
 using Microsoft.SharePoint;
 using SPMeta2.SSOM.Services;
+using SPMeta2.SSOM.Standard.Services;
 
 namespace M2RootNamespace.Services
 {
-    public class M2ProjectPrefixSSOMProvisionService : SSOMProvisionService
+    public class M2ProjectPrefixStandardSSOMProvisionService : StandardSSOMProvisionService
     {
         #region options
 

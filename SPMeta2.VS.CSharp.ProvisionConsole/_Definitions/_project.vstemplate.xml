@@ -20,4 +20,8 @@
     <Project TargetFileName="SPMeta2.VS.CSharp.ProvisionConsole.csproj" File="SPMeta2.VS.CSharp.ProvisionConsole.csproj" ReplaceParameters="true">      
     </Project>
   </TemplateContent>
+  <WizardExtension>
+    <Assembly>SPMeta2.VS.Tooling, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>SPMeta2.VS.Tooling.Wizards.M2ProvisionConsoleWizard</FullClassName>
+  </WizardExtension>
 </VSTemplate>

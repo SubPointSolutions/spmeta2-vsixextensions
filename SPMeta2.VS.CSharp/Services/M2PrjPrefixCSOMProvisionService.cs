@@ -10,7 +10,7 @@ using SPMeta2.CSOM.Services;
 
 namespace M2RootNamespace.Services
 {
-    public class M2ProjectPrefixCSOMProvisionService 
+    public class M2ProjectPrefixCSOMProvisionService : CSOMProvisionService
     {
         #region options
 
@@ -37,19 +37,17 @@ namespace M2RootNamespace.Services
 
         public void DeployIntranet(ClientContext context, Options options)
         {
-            var provisionService = new CSOMProvisionService();
-
             // pushing site model
             if (options.DeploySite)
             {
                 var siteModel = new M2ProjectPrefixSiteModel();
 
-                provisionService.DeploySiteModel(context, siteModel.GetSiteFeaturesModel());
-                provisionService.DeploySiteModel(context, siteModel.GetUserCustomActionModel());
-                provisionService.DeploySiteModel(context, siteModel.GetSiteSecurityModel());
+                this.DeploySiteModel(context, siteModel.GetSiteFeaturesModel());
+                this.DeploySiteModel(context, siteModel.GetUserCustomActionModel());
+                this.DeploySiteModel(context, siteModel.GetSiteSecurityModel());
 
-                provisionService.DeploySiteModel(context, siteModel.GetFieldsAndContentTypesModel());
-                provisionService.DeploySiteModel(context, siteModel.GetSandboxSolutionsModel());
+                this.DeploySiteModel(context, siteModel.GetFieldsAndContentTypesModel());
+                this.DeploySiteModel(context, siteModel.GetSandboxSolutionsModel());
             }
 
             // pushing root web model
@@ -57,15 +55,15 @@ namespace M2RootNamespace.Services
             {
                 var rootWebModel = new M2ProjectPrefixRootWebModel();
 
-                provisionService.DeployWebModel(context, rootWebModel.GetStyleLibraryModel());
-                provisionService.DeployWebModel(context, rootWebModel.GetModel());
+                this.DeployWebModel(context, rootWebModel.GetStyleLibraryModel());
+                this.DeployWebModel(context, rootWebModel.GetModel());
             }
 
             // pushing 'How-tow' sub web
             if (options.DeployHowTosWeb)
             {
-                var howTosWebModel = new M2PrjPrefixHowTosWebModel();
-                provisionService.DeployWebModel(context, howTosWebModel.GetModel());
+                var howTosWebModel = new M2ProjectPrefixHowTosWebModel();
+                this.DeployWebModel(context, howTosWebModel.GetModel());
             }
         }
 

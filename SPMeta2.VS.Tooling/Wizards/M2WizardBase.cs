@@ -26,19 +26,22 @@ namespace SPMeta2.VS.Tooling.Wizards
 
         public void BeforeOpeningFile(ProjectItem projectItem)
         {
-            _nuGetWizard.BeforeOpeningFile(projectItem);
+            if (_nuGetWizard != null)
+                _nuGetWizard.BeforeOpeningFile(projectItem);
         }
 
         public void ProjectFinishedGenerating(Project project)
         {
             _projectSetupService.SetupM2IntranetProject(project, _projectOptions);
 
-            _nuGetWizard.ProjectFinishedGenerating(project);
+            if (_nuGetWizard != null)
+                _nuGetWizard.ProjectFinishedGenerating(project);
         }
 
         public void ProjectItemFinishedGenerating(ProjectItem projectItem)
         {
-            _nuGetWizard.ProjectItemFinishedGenerating(projectItem);
+            if (_nuGetWizard != null)
+                _nuGetWizard.ProjectItemFinishedGenerating(projectItem);
         }
 
         public bool ShouldAddProjectItem(string filePath)
@@ -48,15 +51,24 @@ namespace SPMeta2.VS.Tooling.Wizards
 
         public void RunFinished()
         {
-            _nuGetWizard.RunFinished();
+            if (_nuGetWizard != null)
+                _nuGetWizard.RunFinished();
         }
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary,
            WizardRunKind runKind, object[] customParams)
         {
-            var result = _wizardForm.ShowDialog();
+            var shouldProcessProject = true;
 
-            if (result == DialogResult.OK)
+            if (_wizardForm is HiddenForm<TProjectOptions>)
+                shouldProcessProject = true;
+            else
+            {
+                var result = _wizardForm.ShowDialog();
+                shouldProcessProject = result == DialogResult.OK;
+            }
+
+            if (shouldProcessProject)
             {
                 _projectOptions = _wizardForm.ProjectOptions;
 
@@ -64,13 +76,14 @@ namespace SPMeta2.VS.Tooling.Wizards
                 _projectSetupService.MapProjectProperties(replacementsDictionary, _projectOptions);
 
                 // re-generate nuget packages
-                _projectSetupService.UpdateVSProjectNuGetPackages(_projectOptions, customParams[0].ToString());
+                if (_projectSetupService.UpdateVSProjectNuGetPackages(_projectOptions, customParams[0].ToString()))
+                {
+                    // run nuget stuff
+                    var asm = Assembly.Load("NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a");
 
-                // run nuget stuff
-                var asm = Assembly.Load("NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a");
-                _nuGetWizard = (IWizard)asm.CreateInstance("NuGet.VisualStudio.TemplateWizard");
-
-                _nuGetWizard.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
+                    _nuGetWizard = (IWizard)asm.CreateInstance("NuGet.VisualStudio.TemplateWizard");
+                    _nuGetWizard.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
+                }
             }
         }
     }

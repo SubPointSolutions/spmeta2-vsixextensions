@@ -27,6 +27,11 @@ namespace SPMeta2.VS.Tooling.Options
         public ProjectType ProjectType { get; set; }
     }
 
+    public class M2ConsoleProjectOptions : M2ProjectOptions
+    {
+
+    }
+
     public class M2IntranetProjectOptions : M2ProjectOptions
     {
         #region constructors

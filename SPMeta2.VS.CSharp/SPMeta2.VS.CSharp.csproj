@@ -29,23 +29,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - Templates|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - Templates\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="SPMeta2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.Core.1.2.10\lib\net45\SPMeta2.dll</HintPath>
-    </Reference>
-    <Reference Include="SPMeta2.CSOM">
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.10\lib\net45\SPMeta2.CSOM.dll</HintPath>
-    </Reference>
-    <Reference Include="SPMeta2.SSOM">
-      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.0-beta2\lib\net45\SPMeta2.SSOM.dll</HintPath>
-    </Reference>
-    <Reference Include="SPMeta2.Standard">
-      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.10\lib\net45\SPMeta2.Standard.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,17 +84,19 @@
       <DependentUpon>StringResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\M2PrjPrefixStandardCSOMProvisionService.cs" />
+    <Compile Include="Services\M2PrjPrefixStandardSSOMProvisionService.cs" />
     <Compile Include="Services\M2PrjPrefixSSOMProvisionService.cs" />
     <Compile Include="Services\M2PrjPrefixCSOMProvisionService.cs" />
+    <Compile Include="Utils\M2PrjPrefixUtils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="m2.png" />
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jquery-1.11.3.min.js">
+    <Content Include="_preprocess.xml" />
+    <None Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jq_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\AboutThisSite\about-site.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -112,7 +107,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
-    <Content Include="_Definitions\_project.vstemplate.xml" />
+    <Content Include="Packages\microsoft.sharepointonline.csom.16.1.3912.1204.nupkg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />
@@ -141,9 +136,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

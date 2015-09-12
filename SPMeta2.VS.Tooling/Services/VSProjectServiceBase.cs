@@ -58,7 +58,7 @@ namespace SPMeta2.VS.Tooling.Services
             replacementsDictionary.Add("M2RootNamespace", replacementsDictionary["$safeprojectname$"]);
         }
 
-        public abstract void UpdateVSProjectNuGetPackages(TOptions options, string vsDefPath);
+        public abstract bool UpdateVSProjectNuGetPackages(TOptions options, string vsDefPath);
 
         protected virtual void HandleExcludedFiles(Project project, IEnumerable<string> fileNames)
         {
@@ -86,6 +86,25 @@ namespace SPMeta2.VS.Tooling.Services
                 removals[i].Remove();
         }
 
+        protected virtual void HandleRenamedFiles(Project project, Dictionary<string, string> fileName)
+        {
+            var it = new ProjectItemIterator(new[] { project }).GetEnumerator();
+
+            while (it.MoveNext())
+            {
+                var item = it.Current;
+
+                if (!string.IsNullOrEmpty(item.Name))
+                {
+                    if (fileName.Keys.Any(n => n.ToUpper() == item.Name.ToUpper()))
+                    {
+                        item.Name = fileName[item.Name];
+
+                    }
+                }
+            }
+        }
+
         protected virtual XElement CreateNuGetPackageNode(string packageId)
         {
             return CreateNuGetPackageNode(packageId, M2Consts.M2RunTimeVersion);
@@ -93,6 +112,15 @@ namespace SPMeta2.VS.Tooling.Services
 
         protected virtual XElement CreateNuGetPackageNode(string packageId, string version)
         {
+            // hack, we know, will fix later
+            if (packageId.ToLower().Contains("microsoft.sharepointonline.csom"))
+            {
+                return new XElement("package",
+                  new XAttribute("id", packageId),
+                  new XAttribute("version", "16.1.3912.1204")
+                  );
+            }
+
             return new XElement("package",
                 new XAttribute("id", packageId),
                 new XAttribute("version", version)

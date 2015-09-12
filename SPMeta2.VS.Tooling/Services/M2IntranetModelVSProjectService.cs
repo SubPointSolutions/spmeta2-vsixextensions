@@ -36,12 +36,47 @@ namespace SPMeta2.VS.Tooling.Services
                 itemsToExclude.Add("Taxonomy");
             }
 
-            if (options.ProjectPlatform == ProjectPlatform.None)
+            switch (options.ProjectPlatform)
             {
-                itemsToExclude.Add("Services");
+                case ProjectPlatform.None:
+                    {
+                        itemsToExclude.Add("Services");
+                    }
+                    break;
+
+                case ProjectPlatform.SP2013CSOM:
+                case ProjectPlatform.O365CSOM:
+                    {
+                        itemsToExclude.Add(options.ProjectPrefix + "SSOMProvisionService.cs");
+                        itemsToExclude.Add(options.ProjectPrefix + "StandardSSOMProvisionService.cs");
+
+                        if (options.ProjectType == ProjectType.Foundation)
+                            itemsToExclude.Add(options.ProjectPrefix + "StandardCSOMProvisionService.cs");
+                        else
+                            itemsToExclude.Add(options.ProjectPrefix + "CSOMProvisionService.cs");
+                    }
+                    break;
+
+                case ProjectPlatform.SP2013SSOM:
+                    {
+                        itemsToExclude.Add(options.ProjectPrefix + "CSOMProvisionService.cs");
+                        itemsToExclude.Add(options.ProjectPrefix + "StandardCSOMProvisionService.cs");
+
+                        if (options.ProjectType == ProjectType.Foundation)
+                            itemsToExclude.Add(options.ProjectPrefix + "StandardSSOMProvisionService.cs");
+                        else
+                            itemsToExclude.Add(options.ProjectPrefix + "SSOMProvisionService.cs");
+                    }
+                    break;
+
             }
 
             HandleExcludedFiles(project, itemsToExclude);
+            
+            HandleRenamedFiles(project, new Dictionary<string, string>
+            {
+                { "jq_", "jquery-1.11.3.min.js" }
+            });
         }
 
         #region utils
@@ -123,14 +158,16 @@ namespace SPMeta2.VS.Tooling.Services
 
                 case ProjectPlatform.O365CSOM:
                     {
-                        project.References.Add("Microsoft.SharePoint.Client");
-                        project.References.Add("Microsoft.SharePoint.Client.Runtime");
+                        // skip it, it'll be via NuGet
 
-                        if (options.ProjectType == ProjectType.Standard)
-                        {
-                            project.References.Add("Microsoft.SharePoint.Client.Publishing");
-                            project.References.Add("Microsoft.SharePoint.Client.Taxonomy");
-                        }
+                        //project.References.Add("Microsoft.SharePoint.Client");
+                        //project.References.Add("Microsoft.SharePoint.Client.Runtime");
+
+                        //if (options.ProjectType == ProjectType.Standard)
+                        //{
+                        //    project.References.Add("Microsoft.SharePoint.Client.Publishing");
+                        //    project.References.Add("Microsoft.SharePoint.Client.Taxonomy");
+                        //}
                     }
                     break;
             }
@@ -169,7 +206,7 @@ namespace SPMeta2.VS.Tooling.Services
 
         #region nuget
 
-        public override void UpdateVSProjectNuGetPackages(M2IntranetProjectOptions options, string vsDefPath)
+        public override bool UpdateVSProjectNuGetPackages(M2IntranetProjectOptions options, string vsDefPath)
         {
             var packageIds = new List<string>();
 
@@ -217,6 +254,8 @@ namespace SPMeta2.VS.Tooling.Services
                         packageIds.Add("spmeta2.core");
                         packageIds.Add("SPMeta2.CSOM.Foundation-v16");
 
+                        packageIds.Add("microsoft.sharepointonline.csom");
+
                         if (options.ProjectType == ProjectType.Standard)
                         {
                             packageIds.Add("SPMeta2.CSOM.Standard-v16");
@@ -225,6 +264,8 @@ namespace SPMeta2.VS.Tooling.Services
             }
 
             HandleNuGetPackagesUpdate(vsDefPath, packageIds.Distinct().ToList());
+
+            return true;
         }
 
         #endregion
