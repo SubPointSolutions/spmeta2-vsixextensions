@@ -24,6 +24,6 @@ namespace M2RootNamespace.Consts
         /// <summary>
         /// Default path for style library files.
         /// </summary>
-        public static string DefaultStyleLibraryPath = "Modules/Explicit/Style Library";
+        public static string DefaultStyleLibraryPath = "Modules/Implicit/Style Library";
     }
 }

@@ -18,8 +18,16 @@ namespace M2RootNamespace.Definitions.UI
         {
             Name = "M2ProjectPrefixjQuery",
             Location = "ScriptLink",
-            ScriptSrc = "~sitecollection/Style Library/M2ProjectPrefix.Intranet/3rd part/jQuery/jQuery.js",
+            ScriptSrc = "~sitecollection/Style Library/M2PrjPrefix.Intranet/3rd part/jQuery/jquery-1.11.3.min.js",
             Sequence = 15000
+        };
+
+        public static UserCustomActionDefinition M2PrjPrefixJs = new UserCustomActionDefinition
+        {
+            Name = "M2ProjectPrefixjs",
+            Location = "ScriptLink",
+            ScriptSrc = "~sitecollection/Style Library/M2PrjPrefix.Intranet/js/M2PrjPrefix.Intranet.js",
+            Sequence = 17000
         };
     }
 }

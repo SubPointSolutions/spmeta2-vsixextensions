@@ -6,11 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using M2RootNamespace.Consts;
 using M2RootNamespace.Definitions.Features;
+using M2RootNamespace.Definitions.IA;
+using M2RootNamespace.Definitions.Navigation;
 using SPMeta2.BuiltInDefinitions;
 using SPMeta2.Extensions;
 using SPMeta2.Models;
 using SPMeta2.Syntax.Default;
 using SPMeta2.Syntax.Default.Utils;
+using SPMeta2.VS.CSharp.Extensions;
 
 namespace M2RootNamespace.Models
 {
@@ -33,14 +36,63 @@ namespace M2RootNamespace.Models
     /// </summary>
     public class M2ProjectPrefixRootWebModel
     {
-        public ModelNode GetWebFeaturesModel()
+        public ModelNode GetModel()
         {
             var model = SPMeta2Model.NewWebModel(web =>
             {
-                // either use AddXXX() or just import everything with .AddDefinitionsFromStaticClassType() 
+                web
+                  .AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy)
+                  .AddWebFeature(M2ProjectPrefixWebFeatures.EnableTeamCollabirationLists)
 
-                //web.AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy);
-                //web.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSiteFeatures));
+                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.CompanyDocuments)
+                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleTasks)
+                  .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleEvents)
+
+                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.CompanyDocuments)
+                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Services)
+                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Orders)
+                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleTasks)
+                  .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleEvents)
+
+                  .AddList(M2ProjectPrefixLists.CompanyDocuments, list =>
+                  {
+                      list
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.CompanyDocument)
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.SalesProposal)
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductDocument)
+
+                          .AddListView(M2ProjectPrefixListViews.LastTenDocuments)
+                          .AddListView(M2ProjectPrefixListViews.LastTenDocumentsMainPage)
+
+                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.CompanyDocument);
+                  })
+                  .AddList(M2ProjectPrefixLists.Orders, list =>
+                  {
+                      list
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.OrderDocument)
+                          .AddListView(M2ProjectPrefixListViews.Last25Orders)
+
+                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.OrderDocument);
+                  })
+                  .AddList(M2ProjectPrefixLists.Services, list =>
+                  {
+                      list
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.ProductOrService)
+                          .AddListView(M2ProjectPrefixListViews.AllProducts)
+
+                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.ProductOrService);
+                  })
+                  .AddList(M2ProjectPrefixLists.SalesTasks, list =>
+                  {
+
+                  })
+                  .AddList(M2ProjectPrefixLists.SalesEvents, list =>
+                  {
+                      list
+                          .AddContentTypeLink(M2ProjectPrefixContentTypes.SaleEvents)
+
+                          .M2ProjectPrefixSetDefaultListContentType(M2ProjectPrefixContentTypes.SaleEvents);
+                  });
             });
 
             return model;
@@ -50,18 +102,18 @@ namespace M2RootNamespace.Models
         {
             var webModel = SPMeta2Model.NewWebModel(rootWeb =>
             {
-                //// AddHostList() to indicate that we don't provision list, but just look it up
-                //rootWeb.AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
-                //{
-                //    //LoadModuleFilesFromLocalFolder() helper gets everything from the local folder
-                //    //and creates a new M2 model full of folders/module files
+                // AddHostList() to indicate that we don't provision list, but just look it up
+                rootWeb.AddHostList(BuiltInListDefinitions.StyleLibrary, list =>
+                {
+                    //LoadModuleFilesFromLocalFolder() helper gets everything from the local folder
+                    //and creates a new M2 model full of folders/module files
 
-                //    //everything you have in M2ProjectPrefixConsts.DefaultStyleLibraryPath
-                //    //will be pushed to 'Style Library' back to back
+                    //everything you have in M2ProjectPrefixConsts.DefaultStyleLibraryPath
+                    //will be pushed to 'Style Library' back to back
 
-                //    if (Directory.Exists(M2ProjectPrefixConsts.DefaultStyleLibraryPath))
-                //        ModuleFileUtils.LoadModuleFilesFromLocalFolder(list, M2ProjectPrefixConsts.DefaultStyleLibraryPath);
-                //});
+                    if (Directory.Exists(M2ProjectPrefixConsts.DefaultStyleLibraryPath))
+                        ModuleFileUtils.LoadModuleFilesFromLocalFolder(list, M2ProjectPrefixConsts.DefaultStyleLibraryPath);
+                });
             });
 
             return webModel;

@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SPMeta2">
+      <HintPath>..\packages\SPMeta2.Core.1.2.10\lib\net45\SPMeta2.dll</HintPath>
+    </Reference>
+    <Reference Include="SPMeta2.Standard">
+      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.10\lib\net45\SPMeta2.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,17 +74,22 @@
     <Compile Include="Extensions\ModelNodeExtensions.cs" />
     <Compile Include="Models\M2PrjPrefixSiteModel.cs" />
     <Compile Include="Models\M2PrjPrefixRootWebModel.cs" />
-    <Compile Include="Models\SubWebs\M2PrjPrefixCustomerWebModel.cs" />
+    <Compile Include="Models\SubWebs\M2PrjPrefixHowTosWebModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\M2PrjPrefixProvisionService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="m2.png" />
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jquery-1.11.3.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\ContactForm\contact-form.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\js\M2PrjPrefix.Intranet.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\Yammer\yammer-group-feed.html">

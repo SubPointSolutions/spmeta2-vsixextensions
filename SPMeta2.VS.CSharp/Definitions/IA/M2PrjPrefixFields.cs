@@ -18,29 +18,38 @@ namespace M2RootNamespace.Definitions.IA
         // SharePoint Foundation fields come under 'SPMeta2.Definitions.Fields' namespace
         // SharePoint Standard+  fields come under 'SPMeta2.Standard.Definitions.Fields' namespace
 
-        public static TextFieldDefinition OrderName = new TextFieldDefinition
+        public static TextFieldDefinition DocumentHighlights = new TextFieldDefinition
         {
             Id = new Guid("67F1D09B-8149-4AAC-B5A4-2673C72542F7"),
-            Title = "Order Name",
-            InternalName = "intr_OrderName",
+            Title = "Highlights",
+            InternalName = "intr_DocumentHighlights",
             Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
-            Required = false,
+            Required = true,
         };
 
-        public static NoteFieldDefinition OrderDescription = new NoteFieldDefinition
+        public static NoteFieldDefinition DocumentDescription = new NoteFieldDefinition
+        {
+            Id = new Guid("F602AB77-7335-4BF1-96D7-7262D307F4A1"),
+            Title = "Description",
+            InternalName = "intr_DocumentDescription",
+            Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
+            Required = true,
+        };
+
+        public static NoteFieldDefinition ProductDescription = new NoteFieldDefinition
         {
             Id = new Guid("E34F3184-2CCD-4F22-AF32-02C6CDBFE4A4"),
-            Title = "Order Description",
-            InternalName = "intr_OrderDescription",
+            Title = "Product Description",
+            InternalName = "intr_ProductDescription",
             Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
             Required = false,
         };
 
-        public static BooleanFieldDefinition IsOrderActive = new BooleanFieldDefinition
+        public static BooleanFieldDefinition IsProductActive = new BooleanFieldDefinition
         {
             Id = new Guid("1DFB6100-C157-4AF7-85DB-45E7A30407B6"),
             Title = "Is Active",
-            InternalName = "intr_IsActiveClient",
+            InternalName = "intr_IsProductActive",
             Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
             Required = false,
         };
@@ -83,27 +92,18 @@ namespace M2RootNamespace.Definitions.IA
             Required = false
         };
 
-        public static GuidFieldDefinition OrderExternalId = new GuidFieldDefinition
-        {
-            Id = new Guid("5201BA98-FDA6-48DC-8735-5DB55D345FC7"),
-            Title = "Order External Id",
-            InternalName = "intr_OrderExernaltId",
-            Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
-            Required = false
-        };
-
-        public static MultiChoiceFieldDefinition OrderType = new MultiChoiceFieldDefinition
+        public static MultiChoiceFieldDefinition ProductType = new MultiChoiceFieldDefinition
         {
             Id = new Guid("6F4C046C-E39F-442B-B0E6-1150E8BF42B4"),
-            Title = "Order Type",
-            InternalName = "intr_OrderType",
+            Title = "Product Type",
+            InternalName = "intr_ProductType",
             Group = M2ProjectPrefixConsts.DefaultSiteFieldsGroup,
             Required = false,
             Choices = new Collection<string>
             {
-                "Gift",
-                "Trial",
-                "Commertial"
+                "Product",
+                "Service",
+                "Leasing"
             }
         };
 

@@ -24,26 +24,34 @@ namespace M2RootNamespace.Definitions.IA
             TemplateType = BuiltInListTemplateTypeId.GenericList,
         };
 
-        public static ListDefinition OrderDocuments = new ListDefinition
+        public static ListDefinition CompanyDocuments = new ListDefinition
         {
-            Title = "Order Documents",
-            CustomUrl = "OrderDocuments",
+            Title = "Company Documents",
+            CustomUrl = "CompanyDocuments",
             ContentTypesEnabled = true,
             TemplateType = BuiltInListTemplateTypeId.DocumentLibrary,
         };
 
-        public static ListDefinition OrderTasks = new ListDefinition
+        public static ListDefinition Services = new ListDefinition
         {
-            Title = "Order Tasks",
-            CustomUrl = "lists/OrderTasks",
+            Title = "Services",
+            CustomUrl = "lists/Services",
+            ContentTypesEnabled = true,
+            TemplateType = BuiltInListTemplateTypeId.GenericList,
+        };
+
+        public static ListDefinition SalesTasks = new ListDefinition
+        {
+            Title = "Sales Tasks",
+            CustomUrl = "lists/SaleTasks",
             ContentTypesEnabled = true,
             TemplateType = BuiltInListTemplateTypeId.TasksWithTimelineAndHierarchy,
         };
 
-        public static ListDefinition OrderEvents = new ListDefinition
+        public static ListDefinition SalesEvents = new ListDefinition
         {
-            Title = "Order Events",
-            CustomUrl = "lists/OrderEvents",
+            Title = "Sales Events",
+            CustomUrl = "lists/SaleEvents",
             ContentTypesEnabled = true,
             TemplateType = BuiltInListTemplateTypeId.Events,
         };

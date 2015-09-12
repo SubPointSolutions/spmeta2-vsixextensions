@@ -7,6 +7,7 @@ using M2RootNamespace.Definitions.Features;
 using M2RootNamespace.Definitions.IA;
 using M2RootNamespace.Definitions.Security;
 using M2RootNamespace.Definitions.Solutions;
+using M2RootNamespace.Definitions.UI;
 using SPMeta2.Extensions;
 using SPMeta2.Models;
 using SPMeta2.Syntax.Default;
@@ -91,38 +92,46 @@ namespace M2RootNamespace.Models
         {
             var model = SPMeta2Model.NewSiteModel(site =>
             {
-                #region sample
-
-                // building up fields
-                // use AddField() or just mport all fields from M2ProjectPrefixFields class
-                //site
-                //    .AddField(M2ProjectPrefixFields.OrderName)
-                //    .AddField(M2ProjectPrefixFields.OrderDescription)
-                //    .AddField(M2ProjectPrefixFields.OrderDate)
-                //    .AddField(M2ProjectPrefixFields.OrderPrice);
-
-                //site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixFields));
+                // adding all fields from M2ProjectPrefixFields class
+                site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixFields));
 
                 // building up content types
-                //site.AddContentType(M2ProjectPrefixContentTypes.IntranetContract, contentType =>
-                //{
-                //    contentType
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderName)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderDescription)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderAddressState)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderDate)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderPrice);
-                //});
+                site
+                    .AddContentType(M2ProjectPrefixContentTypes.CompanyDocument, contentType =>
+                    {
+                        contentType
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.DocumentHighlights)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.DocumentDescription);
+                    })
+                    .AddContentType(M2ProjectPrefixContentTypes.SalesProposal, contentType =>
+                    {
 
-                //site.AddContentType(M2ProjectPrefixContentTypes.IntranetOrder, contentType =>
-                //{
-                //    contentType
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.IsOrderActive)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderSalePercentage)
-                //        .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderTrackingUrl);
-                //});
+                    })
+                    .AddContentType(M2ProjectPrefixContentTypes.ProductDocument, contentType =>
+                    {
 
-                #endregion
+                    })
+                    .AddContentType(M2ProjectPrefixContentTypes.OrderDocument, contentType =>
+                    {
+                        contentType
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderDate)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderAddressState)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderPrice)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderSalePercentage)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.OrderTrackingUrl);
+                    })
+                    .AddContentType(M2ProjectPrefixContentTypes.ProductOrService, contentType =>
+                    {
+                        contentType
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.ProductDescription)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.ProductType)
+                            .AddContentTypeFieldLink(M2ProjectPrefixFields.IsProductActive);
+                    })
+                    .AddContentType(M2ProjectPrefixContentTypes.SaleEvents, contentType =>
+                    {
+
+                    });
+
             });
 
             return model;
@@ -133,6 +142,17 @@ namespace M2RootNamespace.Models
             var model = SPMeta2Model.NewSiteModel(site =>
             {
 
+            });
+
+            return model;
+        }
+
+        public ModelNode GetUserCustomActionModel()
+        {
+            var model = SPMeta2Model.NewSiteModel(site =>
+            {
+                site.AddUserCustomAction(M2ProjectPrefixUserCustomActions.jQuery);
+                site.AddUserCustomAction(M2ProjectPrefixUserCustomActions.M2PrjPrefixJs);
             });
 
             return model;

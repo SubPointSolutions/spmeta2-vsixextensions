@@ -17,17 +17,24 @@ namespace M2RootNamespace.Definitions.Navigation
         // use UrlUtility.CombineUrl() to construct URL in a safely manner
         // refer your definition, reuse them - enable refactoring
 
-        public static TopNavigationNodeDefinition OrderDocuments = new TopNavigationNodeDefinition
+        public static TopNavigationNodeDefinition CompanyDocuments = new TopNavigationNodeDefinition
         {
-            Title = "Order Documents",
-            Url = "~sitecollection/OrderDocuments",
+            Title = "Company Documents",
+            Url = "~sitecollection/CompanyDocuments",
             IsExternal = true
         };
 
-        public static TopNavigationNodeDefinition OrderTasks = new TopNavigationNodeDefinition
+        public static TopNavigationNodeDefinition SaleTasks = new TopNavigationNodeDefinition
         {
-            Title = "Order Tasks",
-            Url = UrlUtility.CombineUrl("~sitecollection", M2ProjectPrefixLists.OrderTasks.CustomUrl),
+            Title = "Sales Tasks",
+            Url = UrlUtility.CombineUrl("~sitecollection", M2ProjectPrefixLists.SalesTasks.CustomUrl),
+            IsExternal = true
+        };
+
+        public static TopNavigationNodeDefinition SaleEvents = new TopNavigationNodeDefinition
+        {
+            Title = "Sales Events",
+            Url = UrlUtility.CombineUrl("~sitecollection", M2ProjectPrefixLists.SalesEvents.CustomUrl),
             IsExternal = true
         };
     }

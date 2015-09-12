@@ -16,14 +16,7 @@ namespace M2RootNamespace.Definitions.IA
         // BuiltInWebTemplates.Collaboration.TeamSite -> team sites
         // BuiltInWebTemplates.Publishing.PublishingPortal -> publishing portal
 
-        public static WebDefinition Clients = new WebDefinition
-        {
-            Title = "Clients",
-            Url = "clients",
-            WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
-        };
-
-        public static WebDefinition HowTows = new WebDefinition
+        public static WebDefinition HowTos = new WebDefinition
         {
             Title = "HowTos",
             Url = "HowTos",

@@ -14,42 +14,61 @@ namespace M2RootNamespace.Definitions.IA
     {
         // add your content types here as per following samples
 
-        public static ContentTypeDefinition IntranetItem = new ContentTypeDefinition
-        {
-            Name = "My Intranet Item",
-            Id = new Guid("485F1B79-122F-4AA3-AD42-31711977BBBE"),
-            ParentContentTypeId = BuiltInContentTypeId.Item,
-            Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
-        };
-
         /// <summary>
-        /// Base content type for all documents.
+        /// Base document content type for all company documents.
         /// </summary>
-        public static ContentTypeDefinition IntranetDocument = new ContentTypeDefinition
+        public static ContentTypeDefinition CompanyDocument = new ContentTypeDefinition
         {
-            Name = "My Intranet Document",
+            Name = "Company Document",
             Id = new Guid("7D657561-EB04-4BC7-BD31-B2C57F7E23CD"),
             ParentContentTypeId = BuiltInContentTypeId.Document,
             Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
         };
 
         /// <summary>
-        /// Custom order based on the 'base' document - use .GetContentTypeId() method
+        /// CProposal the 'base' document - use .GetContentTypeId() method
         /// </summary>
-        public static ContentTypeDefinition IntranetOrder = new ContentTypeDefinition
+        public static ContentTypeDefinition SalesProposal = new ContentTypeDefinition
         {
-            Name = "My Intranet Order",
+            Name = "Sales Proposal",
             Id = new Guid("C012D6B2-3901-4E1A-A256-3079178F6305"),
-            ParentContentTypeId = IntranetDocument.GetContentTypeId(),
+            ParentContentTypeId = CompanyDocument.GetContentTypeId(),
             Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
         };
 
         /// <summary>
-        /// Custom event
+        ///  on the 'base' document - use .GetContentTypeId() method
         /// </summary>
-        public static ContentTypeDefinition IntranetEvent = new ContentTypeDefinition
+        public static ContentTypeDefinition ProductDocument = new ContentTypeDefinition
         {
-            Name = "My Intranet Event",
+            Name = "Product Document",
+            Id = new Guid("C012D6B2-3901-4E1A-A256-3079178F6305"),
+            ParentContentTypeId = CompanyDocument.GetContentTypeId(),
+            Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
+        };
+
+        public static ContentTypeDefinition OrderDocument = new ContentTypeDefinition
+        {
+            Name = "Order Document",
+            Id = new Guid("485F1B79-122F-4AA3-AD42-31711977BBBE"),
+            ParentContentTypeId = BuiltInContentTypeId.Item,
+            Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
+        };
+
+        public static ContentTypeDefinition ProductOrService = new ContentTypeDefinition
+        {
+            Name = "Product or Service",
+            Id = new Guid("425E1307-5965-47D6-A570-58B039247A4D"),
+            ParentContentTypeId = BuiltInContentTypeId.Item,
+            Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
+        };
+
+        /// <summary>
+        /// Custom company event
+        /// </summary>
+        public static ContentTypeDefinition SaleEvents = new ContentTypeDefinition
+        {
+            Name = "Sale Events",
             Id = new Guid("0F014C82-DD84-4678-8E32-1E07EBAE69BD"),
             ParentContentTypeId = BuiltInContentTypeId.Event,
             Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup

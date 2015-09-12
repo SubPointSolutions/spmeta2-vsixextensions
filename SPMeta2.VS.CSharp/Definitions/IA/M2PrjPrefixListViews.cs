@@ -23,14 +23,81 @@ namespace M2RootNamespace.Definitions.IA
         {
             Title = "Last 10 Documents",
             RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            IsDefault = true,
             Fields = new Collection<string>
             {
-                
                 BuiltInInternalFieldNames.DocIcon,
                 BuiltInInternalFieldNames.LinkFilename,
+                M2ProjectPrefixFields.DocumentHighlights.InternalName,
+                M2ProjectPrefixFields.DocumentDescription.InternalName,
                 BuiltInInternalFieldNames.Editor,
                 BuiltInInternalFieldNames._UIVersionString,
                 BuiltInInternalFieldNames.ContentType
+            }
+        };
+
+        public static ListViewDefinition LastTenDocumentsMainPage = new ListViewDefinition
+        {
+            Title = "Last 10 Documents Main Page",
+            RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.DocIcon,
+                BuiltInInternalFieldNames.LinkFilename,
+                BuiltInInternalFieldNames.Editor,
+            }
+        };
+
+        public static ListViewDefinition Last25Orders = new ListViewDefinition
+        {
+            Title = "Last 25 Orders",
+            RowLimit = 25,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            IsDefault = true,
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.DocIcon,
+                BuiltInInternalFieldNames.LinkFilename,
+                M2ProjectPrefixFields.OrderDate.InternalName,
+                M2ProjectPrefixFields.OrderAddressState.InternalName,
+                M2ProjectPrefixFields.OrderPrice.InternalName,
+                M2ProjectPrefixFields.OrderSalePercentage.InternalName,
+                M2ProjectPrefixFields.OrderTrackingUrl.InternalName,
+                BuiltInInternalFieldNames.Editor,
+                BuiltInInternalFieldNames._UIVersionString,
+            }
+        };
+
+        public static ListViewDefinition AllProducts = new ListViewDefinition
+        {
+            Title = "All Products",
+            RowLimit = 100,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            IsDefault = true,
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.DocIcon,
+                BuiltInInternalFieldNames.LinkFilename,
+                M2ProjectPrefixFields.ProductDescription.InternalName,
+                M2ProjectPrefixFields.ProductType.InternalName,
+                M2ProjectPrefixFields.IsProductActive.InternalName,
+                BuiltInInternalFieldNames.Editor,
+                BuiltInInternalFieldNames._UIVersionString,
+            }
+        };
+
+        public static ListViewDefinition LastTenServices = new ListViewDefinition
+        {
+            Title = "Last 10 Services",
+            RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.LinkFilename,
+                BuiltInInternalFieldNames.TaskDueDate,
+                BuiltInInternalFieldNames.AssignedTo,
             }
         };
 
@@ -38,12 +105,25 @@ namespace M2RootNamespace.Definitions.IA
         {
             Title = "Last 10 Tasks",
             RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
             Fields = new Collection<string>
             {
                 BuiltInInternalFieldNames.LinkFilename,
-                BuiltInInternalFieldNames.Editor,
-                BuiltInInternalFieldNames._UIVersionString,
-                BuiltInInternalFieldNames.ContentType
+                BuiltInInternalFieldNames.TaskDueDate,
+                BuiltInInternalFieldNames.AssignedTo,
+            }
+        };
+
+        public static ListViewDefinition LastTenTasksMainPage = new ListViewDefinition
+        {
+            Title = "Last 10 Tasks Main Page",
+            RowLimit = 10,
+            Query = "<OrderBy><FieldRef Name='ID' Ascending='False'/></OrderBy>",
+            Fields = new Collection<string>
+            {
+                BuiltInInternalFieldNames.LinkFilename,
+                BuiltInInternalFieldNames.TaskDueDate,
+                BuiltInInternalFieldNames.AssignedTo,
             }
         };
     }

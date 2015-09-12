@@ -17,17 +17,38 @@ namespace M2RootNamespace.Definitions.Navigation
         // use UrlUtility.CombineUrl() to construct URL in a safely manner
         // refer your definition, reuse them - enable refactoring
 
-        public static QuickLaunchNavigationNodeDefinition OrderDocuments = new QuickLaunchNavigationNodeDefinition
+        public static QuickLaunchNavigationNodeDefinition CompanyDocuments = new QuickLaunchNavigationNodeDefinition
         {
-            Title = "Order Documents",
-            Url = "~sitecollection/OrderDocuments",
+            Title = "Company Documents",
+            Url = "~site/CompanyDocuments",
             IsExternal = true
         };
 
-        public static QuickLaunchNavigationNodeDefinition OrderTasks = new QuickLaunchNavigationNodeDefinition
+        public static QuickLaunchNavigationNodeDefinition Services = new QuickLaunchNavigationNodeDefinition
         {
-            Title = "Order Tasks",
-            Url = UrlUtility.CombineUrl("~sitecollection", M2ProjectPrefixLists.OrderTasks.CustomUrl),
+            Title = "Services",
+            Url = UrlUtility.CombineUrl("~site", M2ProjectPrefixLists.Services.CustomUrl),
+            IsExternal = true
+        };
+
+        public static QuickLaunchNavigationNodeDefinition Orders = new QuickLaunchNavigationNodeDefinition
+        {
+            Title = "Orders",
+            Url = UrlUtility.CombineUrl("~site", M2ProjectPrefixLists.Orders.CustomUrl),
+            IsExternal = true
+        };
+
+        public static QuickLaunchNavigationNodeDefinition SaleTasks = new QuickLaunchNavigationNodeDefinition
+        {
+            Title = "Sales Tasks",
+            Url = UrlUtility.CombineUrl("~site", M2ProjectPrefixLists.SalesTasks.CustomUrl),
+            IsExternal = true
+        };
+
+        public static QuickLaunchNavigationNodeDefinition SaleEvents = new QuickLaunchNavigationNodeDefinition
+        {
+            Title = "Sales Events",
+            Url = UrlUtility.CombineUrl("~site", M2ProjectPrefixLists.SalesEvents.CustomUrl),
             IsExternal = true
         };
     }
