@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.Taxonomy
 {
     public static class M2ProjectPrefixTaxonomyTermSets
     {
-        // define your taxonomy terms as per the samples below
-
         public static TaxonomyTermSetDefinition OrderTypes = new TaxonomyTermSetDefinition
         {
             Name = "Order Types"

@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.Pages
 {
     public static class M2ProjectPrefixWebPartPages
     {
-        // add your publishing pages here as per the following samples
-
         // use BuiltInWebPartPageTemplates to refer OOTB page layouts
         // use CustomPageLayout to define your page as needed
 

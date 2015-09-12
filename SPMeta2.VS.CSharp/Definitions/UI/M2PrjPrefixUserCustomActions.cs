@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.UI
 {
     public static class M2ProjectPrefixUserCustomActions
     {
-        // define your user custom actions as per the samples below
-
         // use ~sitecollection or ~site tokens, they are suppoerted by M2
         // use UrlUtility.CombineUrl() to construct URL in a safely manner
 

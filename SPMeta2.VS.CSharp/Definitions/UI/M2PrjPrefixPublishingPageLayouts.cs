@@ -8,6 +8,6 @@ namespace M2RootNamespace.Definitions.UI
 {
     public static class M2ProjectPrefixPublishingPageLayouts
     {
-        // define your publisihng page layouts as per the samples below
+       
     }
 }

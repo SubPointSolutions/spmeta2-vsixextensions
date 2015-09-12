@@ -13,10 +13,8 @@ namespace M2RootNamespace.Definitions.IA
 {
     public static class M2ProjectPrefixFields
     {
-        // add your fields here as per following samples
-
-        // SharePoint Foundation fields come under 'SPMeta2.Definitions.Fields' namespace
-        // SharePoint Standard+  fields come under 'SPMeta2.Standard.Definitions.Fields' namespace
+        /// SharePoint Foundation fields come under 'SPMeta2.Definitions.Fields' namespace
+        /// SharePoint Standard+  fields come under 'SPMeta2.Standard.Definitions.Fields' namespace
 
         public static TextFieldDefinition DocumentHighlights = new TextFieldDefinition
         {

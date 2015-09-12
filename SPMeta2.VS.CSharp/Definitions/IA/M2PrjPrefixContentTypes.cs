@@ -12,8 +12,6 @@ namespace M2RootNamespace.Definitions.IA
 {
     public static class M2ProjectPrefixContentTypes
     {
-        // add your content types here as per following samples
-
         /// <summary>
         /// Base document content type for all company documents.
         /// </summary>

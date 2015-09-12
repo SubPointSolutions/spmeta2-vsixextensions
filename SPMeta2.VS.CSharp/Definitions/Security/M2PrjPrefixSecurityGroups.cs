@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.Security
 {
     public static class M2ProjectPrefixSecurityGroups
     {
-        // add your security groups here as per the following samples
-
         public static SecurityGroupDefinition OrderApprovers = new SecurityGroupDefinition
         {
             Name = "Order Approvers",

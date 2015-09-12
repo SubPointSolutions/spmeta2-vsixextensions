@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.UI
 {
     public static class M2ProjectPrefixWebparts
     {
-        // define your web parts here as per the following samples
-
         // Use WebPartDefinition to define a generic or custom web part
         // One of WebpartType, WebpartXmlTemplate or WebpartFileName needs to be defined
         // http://docs.subpointsolutions.com/spmeta2/definitions/sharepoint-foundation/webpartdefinition

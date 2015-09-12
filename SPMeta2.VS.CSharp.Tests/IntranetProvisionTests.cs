@@ -40,6 +40,7 @@ namespace SPMeta2.VS.CSharp.Tests
                 // site
                 provisionService.DeploySiteModel(context, siteModel.GetSiteFeaturesModel());
                 provisionService.DeploySiteModel(context, siteModel.GetUserCustomActionModel());
+                provisionService.DeploySiteModel(context, siteModel.GetSiteSecurityModel());
 
                 provisionService.DeploySiteModel(context, siteModel.GetFieldsAndContentTypesModel());
                 provisionService.DeploySiteModel(context, siteModel.GetSandboxSolutionsModel());
@@ -47,7 +48,6 @@ namespace SPMeta2.VS.CSharp.Tests
                 // root web
                 provisionService.DeployWebModel(context, rootWebModel.GetStyleLibraryModel());
                 provisionService.DeployWebModel(context, rootWebModel.GetModel());
-                
             });
         }
 

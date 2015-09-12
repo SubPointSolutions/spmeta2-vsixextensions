@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.Solutions
 {
     public static class M2ProjectPrefixSandboxSolutions
     {
-        // add your sandbox solutions here as per the following samples
-
         // Set 'FileName' which will be in the solution gallery
         // Set SolutionId (get it from the visual studio or from the unpacked *.wsp
 

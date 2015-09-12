@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.Taxonomy
 {
     public static class M2ProjectPrefixTaxonomyStores
     {
-        // define your taxonomy stores as per the samples below
-
         // M2 never creates a taxonomy store
         // The definitions are used only to 'lookup' existing one and continute taxonomy provision 
 

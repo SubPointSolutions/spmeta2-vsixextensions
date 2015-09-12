@@ -11,8 +11,6 @@ namespace M2RootNamespace.Definitions.Features
 {
     public static class M2ProjectPrefixWebFeatures
     {
-        // add your web scoped features here as per following samples
-
         public static FeatureDefinition DisableMinimalDownloadStrategy = BuiltInWebFeatures.MinimalDownloadStrategy.Inherit(def =>
         {
             def.Enable = false;

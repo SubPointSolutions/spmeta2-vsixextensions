@@ -13,8 +13,6 @@ namespace M2RootNamespace.Definitions.IA
 {
     public static class M2ProjectPrefixListViews
     {
-        // add your list views here as per following samples
-
         // Use BuiltInInternalFieldNames and BuiltInInternalPublishingFieldNames to refer OOTB SharePoint fields
         // Always use internal name in the 'Fields' props, that's how list views work
         // Use 'Query' prop to define correct caml query

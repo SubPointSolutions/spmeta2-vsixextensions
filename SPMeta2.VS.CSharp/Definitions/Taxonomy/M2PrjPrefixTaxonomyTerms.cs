@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.Taxonomy
 {
     public static class M2ProjectPrefixTaxonomyTerms
     {
-        // define your taxonomy terms as per the samples below
-
         public static TaxonomyTermDefinition SmallBusiness = new TaxonomyTermDefinition
         {
             Name = "Small Business"

@@ -11,8 +11,6 @@ namespace M2RootNamespace.Definitions.Features
 {
     public static class M2ProjectPrefixSiteFeatures
     {
-        // add your site scoped features here as per following samples
-
         public static FeatureDefinition BasicWebParts = BuiltInSiteFeatures.BasicWebParts.Inherit(def =>
         {
             def.Enable = true;

@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.Pages
 {
     public static class M2ProjectPrefixWikiPages
     {
-        // add your wiki pages here as per the following samples
-
         public static WikiPageDefinition FAQ = new WikiPageDefinition
         {
             Title = "FAQ",

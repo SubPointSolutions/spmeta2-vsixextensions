@@ -42,6 +42,7 @@ namespace M2RootNamespace.Models
             var model = SPMeta2Model.NewSiteModel(site =>
             {
                 // either use AddXXX() or just import everything with .AddDefinitionsFromStaticClassType() 
+                // !!! commented out as there is no *.wsp package out there !!!
 
                 //site.AddSandboxSolution(M2ProjectPrefixSandboxSolutions.WebsiteBranding);
                 //site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSandboxSolutions));
@@ -54,21 +55,8 @@ namespace M2RootNamespace.Models
         {
             var model = SPMeta2Model.NewSiteModel(site =>
             {
-                // either use AddXXX() or just import everything with .AddDefinitionsFromStaticClassType() 
-
-                // adding security groups
-                //site
-                //    .AddSecurityGroup(M2ProjectPrefixSecurityGroups.OrderApprovers)
-                //    .AddSecurityGroup(M2ProjectPrefixSecurityGroups.OrderReviewers);
-
-                //site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSecurityGroups));
-
-                //// adding security roles
-                //site
-                //    .AddSecurityRole(M2ProjectPrefixSecurityRoles.OrderAuthor)
-                //    .AddSecurityRole(M2ProjectPrefixSecurityRoles.OrderRead);
-
-                //site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSecurityRoles));
+                site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSecurityGroups));
+                site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSecurityRoles));
             });
 
             return model;
@@ -80,8 +68,7 @@ namespace M2RootNamespace.Models
             {
                 // either use AddXXX() or just import everything with .AddDefinitionsFromStaticClassType() 
 
-                //site.AddSiteFeature(M2ProjectPrefixSiteFeatures.BasicWebParts);
-
+                site.AddSiteFeature(M2ProjectPrefixSiteFeatures.BasicWebParts);
                 //site.AddDefinitionsFromStaticClassType(typeof(M2ProjectPrefixSiteFeatures));
             });
 
@@ -131,7 +118,6 @@ namespace M2RootNamespace.Models
                     {
 
                     });
-
             });
 
             return model;
@@ -141,7 +127,11 @@ namespace M2RootNamespace.Models
         {
             var model = SPMeta2Model.NewSiteModel(site =>
             {
+                // skipped, it it might be a foundation project setup
+                // refer to Taxonomy provision scenarios here:
 
+                // http://docs.subpointsolutions.com/spmeta2/scenarios/
+                // http://docs.subpointsolutions.com/spmeta2/definitions/sharepoint-standard/taxonomy/taxonomytermdefinition/
             });
 
             return model;

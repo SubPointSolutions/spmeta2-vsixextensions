@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.Navigation
 {
     public static class M2ProjectPrefixWebNavigationSettings
     {
-        // add your web navigation settings (WebNavigationSettingsDefinition) here as per following samples
-
         // they require Standard+ (publishing infrastructure) and deployed under the web
         // correspond to everything you see on Look and Feel -> Navigation' page ( _layouts/15/AreaNavigationSettings.aspx)
 

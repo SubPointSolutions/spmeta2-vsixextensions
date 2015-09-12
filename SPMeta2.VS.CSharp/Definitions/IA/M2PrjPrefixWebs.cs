@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.IA
 {
     public static class M2ProjectPrefixWebs
     {
-        // add your webs here as per following samples
-
         // Use BuiltInWebTemplates to refer OOT web templates
         // BuiltInWebTemplates.Collaboration.TeamSite -> team sites
         // BuiltInWebTemplates.Publishing.PublishingPortal -> publishing portal

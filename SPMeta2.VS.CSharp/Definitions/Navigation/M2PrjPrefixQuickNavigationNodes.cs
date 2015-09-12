@@ -11,8 +11,6 @@ namespace M2RootNamespace.Definitions.Navigation
 {
     public static class M2ProjectPrefixQuickNavigationNodes
     {
-        // add your quick navigation (left navigation) here as per following samples
-
         // use ~sitecollection or ~site tokens, they are suppoerted by M2
         // use UrlUtility.CombineUrl() to construct URL in a safely manner
         // refer your definition, reuse them - enable refactoring

@@ -9,8 +9,6 @@ namespace M2RootNamespace.Definitions.Taxonomy
 {
     public static class M2ProjectPrefixTaxonomyTermGroups
     {
-        // define your taxonomy groups as per the samples below
-
         // Use IsSiteCollectionGroup to indicate default site scoped taxonomy group 
 
         public static TaxonomyTermGroupDefinition OrdersCRM = new TaxonomyTermGroupDefinition

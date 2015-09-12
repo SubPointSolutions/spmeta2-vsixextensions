@@ -11,9 +11,8 @@ namespace M2RootNamespace.Definitions.Pages
 {
     public static class M2ProjectPrefixPublishingPages
     {
-        // add your publishing pages here as per the following samples
-
-        // use BuiltInPublishingPageLayoutNames to refer OOTB page layouts or define the target file name
+        // use BuiltInPublishingPageLayoutNames to refer OOTB page layouts
+        // or define the target file name
 
         #region samples
 

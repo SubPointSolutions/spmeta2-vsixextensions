@@ -11,9 +11,6 @@ namespace M2RootNamespace.Definitions.Pages
 {
     public static class M2ProjectPrefixWelcomePages
     {
-        // add your welcome pages here as per following samples
-        // they can be deployed under web, list or a foler
-
         // use UrlUtility.CombineUrl() to construct URL in a safely manner
         // refer your definition, reuse them - enable refactoring
 

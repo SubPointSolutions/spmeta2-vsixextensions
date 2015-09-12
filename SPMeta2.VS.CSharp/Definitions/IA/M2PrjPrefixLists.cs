@@ -10,8 +10,6 @@ namespace M2RootNamespace.Definitions.IA
 {
     public static class M2ProjectPrefixLists
     {
-        // add your lists here as per following samples
-
         // Tend to use 'CustomUrl' property - it is web-relative URL of the list or library
         // Lists some with 'lists/mylist' and libraries come as 'mylibrary'
         // Use BuiltInListTemplateTypeId to refer OOTB SharePoint list types
