@@ -21,9 +21,7 @@ namespace M2RootNamespace.Definitions.Solutions
         {
             FileName = "MyWebsiteBranding.wsp",
             SolutionId = new Guid("correct-solution-id-here"),
-
             Activate = true,
-
             Content = File.ReadAllBytes(AppDomain.CurrentDomain.BaseDirectory + "\\MyWebsiteBranding.wsp")
         };
     }

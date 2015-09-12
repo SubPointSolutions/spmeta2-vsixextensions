@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>DateTime Field Definition</Title>
+      <Author>SubPoint Solutions</Author>
+      <Description>Creates a new text field definition.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>m2FieldDateTime</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System.Collections.ObjectModel</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Definitions</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Enumerations</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>title</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>internalName</ID>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+        <![CDATA[public static DateTimeFieldDefinition $name$ = new DateTimeFieldDefinition
+        {
+            Id = new Guid("new-guid-here"),
+            Title = "$title$",
+            InternalName = "$internalName$",
+            Group = String.Empty,
+            Required = false
+        };
+	    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+
+</CodeSnippets>

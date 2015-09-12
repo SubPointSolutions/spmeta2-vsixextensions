@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Team site web definition</Title>
+      <Author>SubPoint Solutions</Author>
+      <Description>Creates a new team web definition.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>m2SandboxSolution</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>SPMeta2.Definitions</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Enumerations</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.IO</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fileName</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>localFileName</ID>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+        <![CDATA[public static SandboxSolutionDefinition $name$ = new SandboxSolutionDefinition
+        {
+            FileName = "$fileName$.wsp",
+            SolutionId = new Guid("correct-solution-id-here"),
+            Activate = true,
+            Content = File.ReadAllBytes("$localFileName$.wsp")
+        };
+	    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+</CodeSnippets>

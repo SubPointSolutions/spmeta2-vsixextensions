@@ -71,8 +71,52 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="ItemTemplates\SPMeta2\ContentTypes\icon.png" />
+    <None Include="ItemTemplates\SPMeta2\ContentTypes\ContentTypes.cs" />
+    <Content Include="ItemTemplates\SPMeta2\Fields\Definitions\CSharp.vstemplate" />
+    <Content Include="ItemTemplates\SPMeta2\ContentTypes\Definitions\CSharp.vstemplate" />
+    <None Include="ItemTemplates\SPMeta2\ContentTypes\Definitions\VB.vstemplat-" />
+    <None Include="ItemTemplates\SPMeta2\ContentTypes\Definitions\Web.csharp.vstemplat-" />
+    <None Include="ItemTemplates\SPMeta2\ContentTypes\Definitions\Web.VB.vstemplat-" />
+    <None Include="ItemTemplates\SPMeta2\Fields\Definitions\VB.vstemplat-" />
+    <None Include="ItemTemplates\SPMeta2\Fields\Definitions\Web.csharp.vstemplat-" />
+    <None Include="ItemTemplates\SPMeta2\Fields\Definitions\Web.VB.vstemplat-" />
     <None Include="key.snk" />
-    <None Include="Snippets\CSharp\SPMeta2\WebDefinition.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FeatureSite.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ListDocumentLibrary.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ListView.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ListGeneric.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeChild.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeEvent.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeDocument.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeItem.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldCurrency.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldDateTime.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldGuid.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldURL.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldNumber.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldMultiChoice.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldChoice.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldBool.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldNote.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FieldText.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2SecurityRole.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2SecurityGroup.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2PublishingPage.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2SandboxSolution.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2QuickNavigationNode.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyTerm.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyTermSet.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyTermGroup.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2TopNavigationNode.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyStore.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WebNavigationSettings.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WikiPage.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WebPartPage.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WebPublishingPortal.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2FeatureWeb.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2UserCustomActionAsScriptLink.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WebTeamSite.snippet" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -121,6 +165,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ItemTemplates\SPMeta2\Fields\icon.png" />
+    <None Include="ItemTemplates\SPMeta2\Fields\Fields.cs" />
     <Content Include="m2.pkgdef">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

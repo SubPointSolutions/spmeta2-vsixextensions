@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Team site web definition</Title>
+      <Author>SubPoint Solutions</Author>
+      <Description>Creates a new team web definition.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>m2TaxonomyTermGroup</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>SPMeta2.Definitions</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Enumerations</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Standard.Definitions.Taxonomy</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>groupName</ID>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+        <![CDATA[public static TaxonomyTermGroupDefinition $name$ = new TaxonomyTermGroupDefinition
+        {
+            Name = "$groupName$"
+        };
+	    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+</CodeSnippets>

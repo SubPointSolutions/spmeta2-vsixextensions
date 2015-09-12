@@ -1,10 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TemplateReport>
-  <ItemTemplates />
+  <ItemTemplates>
+    <ItemTemplate Path="ItemTemplates\SPMeta2\ContentTypes\Definitions\CSharp.vstemplate" Name="ContentTypes" Description="" ProjectType="CSharp" ProjectSubType="" />
+    <ItemTemplate Path="ItemTemplates\SPMeta2\Fields\Definitions\CSharp.vstemplate" Name="Fields" Description="" ProjectType="CSharp" ProjectSubType="" />
+  </ItemTemplates>
   <ProjectTemplates>
     <ProjectTemplate Path="..\SPMeta2.VS.CSharp\_Definitions\_project.vstemplate.xml" Name="SPMeta2 Intranet Model" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
   </ProjectTemplates>
   <Snippets>
-    <Snippet Title="Web Definition" Description="Creates a new web definition." Shortcut="m2web" Path="Snippets\CSharp\SPMeta2\WebDefinition.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2FeatureSite" Path="Snippets\CSharp\SPMeta2\m2FeatureSite.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ListDocumentLibrary" Path="Snippets\CSharp\SPMeta2\m2ListDocumentLibrary.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ListView" Path="Snippets\CSharp\SPMeta2\m2ListView.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ListGeneric" Path="Snippets\CSharp\SPMeta2\m2ListGeneric.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ContentTypeDocument" Path="Snippets\CSharp\SPMeta2\m2ContentTypeChild.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ContentTypeDocument" Path="Snippets\CSharp\SPMeta2\m2ContentTypeEvent.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ContentTypeChild" Path="Snippets\CSharp\SPMeta2\m2ContentTypeDocument.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2ContentTypeItem" Path="Snippets\CSharp\SPMeta2\m2ContentTypeItem.snippet" />
+    <Snippet Title="Currency Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldCurrency" Path="Snippets\CSharp\SPMeta2\m2FieldCurrency.snippet" />
+    <Snippet Title="DateTime Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldDateTime" Path="Snippets\CSharp\SPMeta2\m2FieldDateTime.snippet" />
+    <Snippet Title="Guid Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldGuid" Path="Snippets\CSharp\SPMeta2\m2FieldGuid.snippet" />
+    <Snippet Title="URL Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldURL" Path="Snippets\CSharp\SPMeta2\m2FieldURL.snippet" />
+    <Snippet Title="Number Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldNumber" Path="Snippets\CSharp\SPMeta2\m2FieldNumber.snippet" />
+    <Snippet Title="MultiChoice Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldMultiChoice" Path="Snippets\CSharp\SPMeta2\m2FieldMultiChoice.snippet" />
+    <Snippet Title="Choice Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldChoice" Path="Snippets\CSharp\SPMeta2\m2FieldChoice.snippet" />
+    <Snippet Title="Boolean Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldBool" Path="Snippets\CSharp\SPMeta2\m2FieldBool.snippet" />
+    <Snippet Title="Text Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldNote" Path="Snippets\CSharp\SPMeta2\m2FieldNote.snippet" />
+    <Snippet Title="Text Field Definition" Description="Creates a new text field definition." Shortcut="m2FieldText" Path="Snippets\CSharp\SPMeta2\m2FieldText.snippet" />
+    <Snippet Title="Publishing site web definition" Description="Creates a new publishing web definition." Shortcut="m2SecurityRole" Path="Snippets\CSharp\SPMeta2\m2SecurityRole.snippet" />
+    <Snippet Title="Publishing site web definition" Description="Creates a new publishing web definition." Shortcut="m2SecurityGroup" Path="Snippets\CSharp\SPMeta2\m2SecurityGroup.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2PublishingPage" Path="Snippets\CSharp\SPMeta2\m2PublishingPage.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2SandboxSolution" Path="Snippets\CSharp\SPMeta2\m2SandboxSolution.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2QuickNavigationNode" Path="Snippets\CSharp\SPMeta2\m2QuickNavigationNode.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2TaxonomyTerm" Path="Snippets\CSharp\SPMeta2\m2TaxonomyTerm.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2TaxonomyTermSet" Path="Snippets\CSharp\SPMeta2\m2TaxonomyTermSet.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2TaxonomyTermGroup" Path="Snippets\CSharp\SPMeta2\m2TaxonomyTermGroup.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2TopNavigationNode" Path="Snippets\CSharp\SPMeta2\m2TopNavigationNode.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2TaxonomyStore" Path="Snippets\CSharp\SPMeta2\m2TaxonomyStore.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2WebNavigationSettings" Path="Snippets\CSharp\SPMeta2\m2WebNavigationSettings.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2WikiPage" Path="Snippets\CSharp\SPMeta2\m2WikiPage.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2WebPartPage" Path="Snippets\CSharp\SPMeta2\m2WebPartPage.snippet" />
+    <Snippet Title="Publishing site web definition" Description="Creates a new publishing web definition." Shortcut="m2WebPublishingPortal" Path="Snippets\CSharp\SPMeta2\m2WebPublishingPortal.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2FeatureWeb" Path="Snippets\CSharp\SPMeta2\m2FeatureWeb.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2UserCustomActionAsScriptLink" Path="Snippets\CSharp\SPMeta2\m2UserCustomActionAsScriptLink.snippet" />
+    <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2WebTeamSite" Path="Snippets\CSharp\SPMeta2\m2WebTeamSite.snippet" />
   </Snippets>
 </TemplateReport>

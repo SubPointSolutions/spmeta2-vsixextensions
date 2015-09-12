@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Team site web definition</Title>
+      <Author>SubPoint Solutions</Author>
+      <Description>Creates a new team web definition.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>m2TopNavigationNode</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>SPMeta2.Definitions</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Enumerations</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Utils</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>title</ID>
+        </Literal>
+        <Literal Editable="true">
+          <ID>url</ID>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+        <![CDATA[public static TopNavigationNodeDefinition $name$ = new TopNavigationNodeDefinition
+        {
+            Title = "title",
+            Url = "~sitecollection/$url$",
+            IsExternal = true
+        };
+	    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+</CodeSnippets>
