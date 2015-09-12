@@ -17,18 +17,18 @@ namespace M2RootNamespace.Definitions.Navigation
 
         #region samples
 
-        //public static WebNavigationSettingsDefinition PortalProviderShowSubsites = new WebNavigationSettingsDefinition
-        //{
-        //    GlobalNavigationSource = BuiltInStandardNavigationSources.PortalProvider,
+        public static WebNavigationSettingsDefinition PortalProviderShowSubsites = new WebNavigationSettingsDefinition
+        {
+            GlobalNavigationSource = BuiltInStandardNavigationSources.PortalProvider,
 
-        //    GlobalNavigationShowPages = false,
-        //    GlobalNavigationShowSubsites = true,
+            GlobalNavigationShowPages = false,
+            GlobalNavigationShowSubsites = true,
 
-        //    CurrentNavigationSource = BuiltInStandardNavigationSources.PortalProvider,
+            CurrentNavigationSource = BuiltInStandardNavigationSources.PortalProvider,
 
-        //    CurrentNavigationShowPages = false,
-        //    CurrentNavigationShowSubsites = true,
-        //};
+            CurrentNavigationShowPages = false,
+            CurrentNavigationShowSubsites = true,
+        };
 
         #endregion
     }

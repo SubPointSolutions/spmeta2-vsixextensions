@@ -5,8 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SPMeta2.Definitions;
 using SPMeta2.Enumerations;
-using SPMeta2.Standard.Definitions;
-using SPMeta2.Standard.Enumerations;
 
 namespace M2RootNamespace.Definitions.Pages
 {

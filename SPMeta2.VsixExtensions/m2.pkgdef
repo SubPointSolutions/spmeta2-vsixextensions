@@ -10,9 +10,9 @@
 
 // packages
 [$RootKey$\InstalledProducts\SPMeta2VsixExtensions]
-@="M2 Extensions"
+@="SPMeta2 Extensions"
 "PID"="1.0"
-"ProductDetails"="SPMeta2 extensions for Visual Studio"
+"ProductDetails"="M2 extension adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and productive."
 [$RootKey$\Packages\{CBBB8ABF-B5EA-460E-94CB-5757D2C885F9}]
 @="VSPackage1Package"
 "InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL"

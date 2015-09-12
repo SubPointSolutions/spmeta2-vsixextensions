@@ -11,11 +11,11 @@ using SPMeta2.VS.Tooling.Options;
 
 namespace SPMeta2.VS.Tooling.Forms
 {
-    public partial class M2IntranetModelForm : Form
+    public partial class M2IntranetModelForm : Form, IM2WizardForm<M2IntranetProjectOptions>
     {
         public M2IntranetModelForm()
         {
-            Options = new M2IntranetProjectOptions();
+            ProjectOptions = new M2IntranetProjectOptions();
 
             InitializeComponent();
             InitDefaultOptions();
@@ -23,10 +23,23 @@ namespace SPMeta2.VS.Tooling.Forms
 
         private void InitDefaultOptions()
         {
-            tbProjectPrefix.Text = Options.ProjectPrefix;
+            tbProjectPrefix.Text = ProjectOptions.ProjectPrefix;
 
-            tbSiteFieldsGroup.Text = Options.SiteFieldsGroupName;
-            tbContentTypesGroup.Text = Options.SiteContentTypesGroupName;
+            tbSiteFieldsGroup.Text = ProjectOptions.SiteFieldsGroupName;
+            tbContentTypesGroup.Text = ProjectOptions.SiteContentTypesGroupName;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // TODO :)
+            base.OnClosing(e);
+
+            MapProjectOptions();
+
+            if (HasValidOptions())
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void bOk_Click(object sender, EventArgs e)
@@ -44,30 +57,30 @@ namespace SPMeta2.VS.Tooling.Forms
         {
             // global prefix
             if (!string.IsNullOrEmpty(tbProjectPrefix.Text))
-                Options.ProjectPrefix = tbProjectPrefix.Text.Trim();
+                ProjectOptions.ProjectPrefix = tbProjectPrefix.Text.Trim();
 
             // consts
             if (!string.IsNullOrEmpty(tbSiteFieldsGroup.Text))
-                Options.SiteFieldsGroupName = tbSiteFieldsGroup.Text.Trim();
+                ProjectOptions.SiteFieldsGroupName = tbSiteFieldsGroup.Text.Trim();
 
             if (!string.IsNullOrEmpty(tbProjectPrefix.Text))
-                Options.SiteContentTypesGroupName = tbContentTypesGroup.Text.Trim();
+                ProjectOptions.SiteContentTypesGroupName = tbContentTypesGroup.Text.Trim();
 
             // platform
             if (rbPlatformNoRefs.Checked)
-                Options.ProjectPlatform = ProjectPlatform.None;
+                ProjectOptions.ProjectPlatform = ProjectPlatform.None;
             if (rbPlatformSP2013SSOM.Checked)
-                Options.ProjectPlatform = ProjectPlatform.SP2013SSOM;
+                ProjectOptions.ProjectPlatform = ProjectPlatform.SP2013SSOM;
             else if (rbPlatformSP2013CSOM.Checked)
-                Options.ProjectPlatform = ProjectPlatform.SP2013CSOM;
+                ProjectOptions.ProjectPlatform = ProjectPlatform.SP2013CSOM;
             else if (rbPlatformO365CSOM.Checked)
-                Options.ProjectPlatform = ProjectPlatform.O365CSOM;
+                ProjectOptions.ProjectPlatform = ProjectPlatform.O365CSOM;
 
             // type
             if (rbFoundation.Checked)
-                Options.ProjectType = ProjectType.Foundation;
+                ProjectOptions.ProjectType = ProjectType.Foundation;
             else if (rbStandard.Checked)
-                Options.ProjectType = ProjectType.Standard;
+                ProjectOptions.ProjectType = ProjectType.Standard;
         }
 
         private bool HasValidOptions()
@@ -76,8 +89,6 @@ namespace SPMeta2.VS.Tooling.Forms
             return true;
         }
 
-        public M2IntranetProjectOptions Options { get; set; }
+        public M2IntranetProjectOptions ProjectOptions { get; set; }
     }
-
-
 }

@@ -4,6 +4,12 @@
     <Identity Id="SPMeta2.VsixExtensions..70e01dce-1338-4e9f-a7a4-484d7e8a5703" Version="1.0.0.1" Language="en-US" Publisher="SubPoint Solutions" />
     <DisplayName>SPMeta2 Extensions</DisplayName>
     <Description xml:space="preserve">M2 extension adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and productive.</Description>
+    <MoreInfo>http://docs.subpointsolutions.com/spmeta2</MoreInfo>
+    <License>Microsoft Public License (MS-PL)</License>
+    <GettingStartedGuide>http://docs.subpointsolutions.com/spmeta2</GettingStartedGuide>
+    <Icon>Resources\m2.png</Icon>
+    <PreviewImage>Resources\m2.png</PreviewImage>
+    <Tags>SPMeta2 M2 SharePoint SP2013 SP2010 O365 Office365 Office365Dev Provision </Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,]" />

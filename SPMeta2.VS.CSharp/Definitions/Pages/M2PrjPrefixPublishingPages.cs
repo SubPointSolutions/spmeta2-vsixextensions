@@ -17,20 +17,20 @@ namespace M2RootNamespace.Definitions.Pages
 
         #region samples
 
-        //public static PublishingPageDefinition About = new PublishingPageDefinition
-        //{
-        //    Title = "About",
-        //    FileName = "About.aspx",
-        //    Content = "Some facinatins content about the company",
-        //    PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLeft
-        //};
+        public static PublishingPageDefinition About = new PublishingPageDefinition
+        {
+            Title = "About",
+            FileName = "About.aspx",
+            Content = "Some facinatins content about the company",
+            PageLayoutFileName = BuiltInPublishingPageLayoutNames.ArticleLeft
+        };
 
-        //public static PublishingPageDefinition AnnualPerformance = new PublishingPageDefinition
-        //{
-        //    Title = "AnnualPerformance",
-        //    FileName = "AnnualPerformance.aspx",
-        //    PageLayoutFileName = BuiltInPublishingPageLayoutNames.BlankWebPartPage
-        //};
+        public static PublishingPageDefinition AnnualPerformance = new PublishingPageDefinition
+        {
+            Title = "AnnualPerformance",
+            FileName = "AnnualPerformance.aspx",
+            PageLayoutFileName = BuiltInPublishingPageLayoutNames.BlankWebPartPage
+        };
 
         #endregion
     }

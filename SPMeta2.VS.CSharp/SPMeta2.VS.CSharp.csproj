@@ -30,34 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
-    <Reference Include="SPMeta2">
-      <HintPath>..\packages\SPMeta2.Core.1.2.0-beta2\lib\net45\SPMeta2.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SPMeta2.CSOM">
-      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.0-beta2\lib\net45\SPMeta2.CSOM.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SPMeta2.CSOM.Standard">
-      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.0-beta2\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SPMeta2.SSOM">
-      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.0-beta2\lib\net45\SPMeta2.SSOM.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SPMeta2.SSOM.Standard">
-      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.0-beta2\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="SPMeta2.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.0-beta2\lib\net45\SPMeta2.Standard.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -136,10 +108,6 @@
     <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
     <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="PSScripts\00. Template.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

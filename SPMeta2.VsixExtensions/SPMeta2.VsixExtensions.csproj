@@ -72,6 +72,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="ItemTemplates\SPMeta2\ContentTypes\icon.png" />
+    <Content Include="Resources\m2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="ItemTemplates\SPMeta2\ContentTypes\ContentTypes.cs" />
     <Content Include="ItemTemplates\SPMeta2\Fields\Definitions\CSharp.vstemplate" />
     <Content Include="ItemTemplates\SPMeta2\ContentTypes\Definitions\CSharp.vstemplate" />

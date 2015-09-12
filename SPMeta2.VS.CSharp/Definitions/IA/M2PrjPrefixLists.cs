@@ -39,5 +39,13 @@ namespace M2RootNamespace.Definitions.IA
             ContentTypesEnabled = true,
             TemplateType = BuiltInListTemplateTypeId.TasksWithTimelineAndHierarchy,
         };
+
+        public static ListDefinition OrderEvents = new ListDefinition
+        {
+            Title = "Order Events",
+            CustomUrl = "lists/OrderEvents",
+            ContentTypesEnabled = true,
+            TemplateType = BuiltInListTemplateTypeId.Events,
+        };
     }
 }

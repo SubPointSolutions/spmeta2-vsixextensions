@@ -53,7 +53,6 @@ namespace M2RootNamespace.Models.SubWebs
                     clientWeb.AddList(M2ProjectPrefixLists.OrderDocuments, list =>
                     {
                         list.AddContentTypeLink(M2ProjectPrefixContentTypes.IntranetOrder);
-                        list.AddContentTypeLink(M2ProjectPrefixContentTypes.IntranetContract);
 
                         list.AddListView(M2ProjectPrefixListViews.LastTenDocuments);
                     });

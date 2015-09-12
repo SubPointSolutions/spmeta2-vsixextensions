@@ -23,25 +23,11 @@ namespace M2RootNamespace.Definitions.IA
             WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
         };
 
-        public static WebDefinition Archive = new WebDefinition
+        public static WebDefinition HowTows = new WebDefinition
         {
-            Title = "Archive",
-            Url = "archive",
+            Title = "HowTos",
+            Url = "HowTos",
             WebTemplate = BuiltInWebTemplates.Collaboration.TeamSite
         };
-
-        #region samples
-
-        ///// <summary>
-        ///// Defining publishing portal for the news
-        ///// </summary>
-        //public static WebDefinition NewsSite = new WebDefinition
-        //{
-        //    Title = "News Site",
-        //    Url = "News",
-        //    WebTemplate = BuiltInWebTemplates.Publishing.PublishingPortal
-        //};
-
-        #endregion
     }
 }

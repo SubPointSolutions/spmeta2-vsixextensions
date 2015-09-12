@@ -21,7 +21,13 @@ namespace SPMeta2.VS.Tooling.Options
         Standard
     }
 
-    public class M2IntranetProjectOptions
+    public class M2ProjectOptions
+    {
+        public ProjectPlatform ProjectPlatform { get; set; }
+        public ProjectType ProjectType { get; set; }
+    }
+
+    public class M2IntranetProjectOptions : M2ProjectOptions
     {
         #region constructors
 
@@ -42,9 +48,11 @@ namespace SPMeta2.VS.Tooling.Options
 
         public string ProjectPrefix { get; set; }
 
-        public ProjectPlatform ProjectPlatform { get; set; }
-        public ProjectType ProjectType { get; set; }
-
+        public string M2ProjectPrefix
+        {
+            get { return ProjectPrefix; }
+        }
+        
         public string SiteFieldsGroupName { get; set; }
         public string SiteContentTypesGroupName { get; set; }
 

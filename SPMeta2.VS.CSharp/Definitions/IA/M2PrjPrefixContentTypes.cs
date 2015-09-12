@@ -34,17 +34,6 @@ namespace M2RootNamespace.Definitions.IA
         };
 
         /// <summary>
-        /// Custom contract based on the 'base' document - use .GetContentTypeId() method
-        /// </summary>
-        public static ContentTypeDefinition IntranetContract = new ContentTypeDefinition
-        {
-            Name = "My Intranet Contract",
-            Id = new Guid("813C16F4-70B1-4978-867A-1497936D4881"),
-            ParentContentTypeId = IntranetDocument.GetContentTypeId(),
-            Group = M2ProjectPrefixConsts.DefaultSiteContentTypesGroup
-        };
-
-        /// <summary>
         /// Custom order based on the 'base' document - use .GetContentTypeId() method
         /// </summary>
         public static ContentTypeDefinition IntranetOrder = new ContentTypeDefinition
