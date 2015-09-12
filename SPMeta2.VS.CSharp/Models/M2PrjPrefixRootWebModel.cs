@@ -49,12 +49,14 @@ namespace M2RootNamespace.Models
                     .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.CompanyDocuments)
                     .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleTasks)
                     .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleEvents)
+                    .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.AboutThisSite)
 
                     .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.CompanyDocuments)
                     .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Services)
                     .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.Orders)
                     .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleTasks)
                     .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.SaleEvents)
+                    .AddQuickLaunchNavigationNode(M2ProjectPrefixQuickNavigationNodes.AboutThisSite)
 
                     .AddList(M2ProjectPrefixLists.CompanyDocuments, list =>
                     {
@@ -107,6 +109,13 @@ namespace M2RootNamespace.Models
                                 .AddWebPart(M2ProjectPrefixWebparts.LastDocuments)
                                 .AddWebPart(M2ProjectPrefixWebparts.LastOrders)
                                 .AddWebPart(M2ProjectPrefixWebparts.SalesEvents);
+                        });
+
+                        list.AddWebPartPage(M2ProjectPrefixWebPartPages.AboutThisSite, page =>
+                        {
+                            page
+                                .AddWebPart(M2ProjectPrefixWebparts.M2YammerFeed)
+                                .AddWebPart(M2ProjectPrefixWebparts.AboutThisSite);
                         });
                     })
 

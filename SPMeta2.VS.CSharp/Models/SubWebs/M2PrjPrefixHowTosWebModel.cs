@@ -26,54 +26,18 @@ namespace M2RootNamespace.Models.SubWebs
     /// It is a good idea to avoid big model preferring small model per every reasonable operation.
     /// The final artifact separation and grouping is tootally up to you and your prpoject needs.
     /// 
-    /// 
     /// Read more here - http://docs.subpointsolutions.com/spmeta2/models/
     /// </summary>
     public class M2PrjPrefixHowTosWebModel
     {
         public ModelNode GetModel()
         {
-            // assuming that we start provision from the root web
             var model = SPMeta2Model.NewWebModel(rootWeb =>
             {
-                //// adding client web to the root web
-                //rootWeb.AddWeb(M2ProjectPrefixWebs., clientWeb =>
-                //{
-                //    // add features, if needed
-                //    clientWeb.AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy);
-
-                //    // filling out the client web - lists, links to content types and list views
-                //    clientWeb.AddList(M2ProjectPrefixLists.Orders, list =>
-                //    {
-                //        list.AddContentTypeLink(M2ProjectPrefixContentTypes.IntranetCustomerOrder);
-
-                //        list.AddListView(M2ProjectPrefixListViews.LastTenDocuments);
-                //    });
-
-                //    clientWeb.AddList(M2ProjectPrefixLists.OrderDocuments, list =>
-                //    {
-                //        list.AddContentTypeLink(M2ProjectPrefixContentTypes.IntranetCustomerOrder);
-
-                //        list.AddListView(M2ProjectPrefixListViews.LastTenDocuments);
-                //    });
-
-                //    clientWeb.AddList(M2ProjectPrefixLists.OrderTasks, list =>
-                //    {
-                //        list.AddListView(M2ProjectPrefixListViews.LastTenTasks);
-                //    });
-
-                //    // adding some pages and web parts
-                //    clientWeb.AddHostList(BuiltInListDefinitions.SitePages, list =>
-                //    {
-                //        list.AddWebPartPage(M2ProjectPrefixWebPartPages.RevenueDashboard);
-                //        list.AddWebPartPage(M2ProjectPrefixWebPartPages.SalesDashboard);
-
-                //        list.AddWebPartPage(M2ProjectPrefixWebPartPages.AboutThisSite, page =>
-                //        {
-                //            page.AddWebPart(M2ProjectPrefixWebparts.AboutCompanyContent);
-                //        });
-                //    });
-                //});
+                rootWeb.AddWeb(M2ProjectPrefixWebs.HowTos, howTosWeb =>
+                {
+                    // fill out the web here, and the deploy as usual
+                });
             });
 
             return model;

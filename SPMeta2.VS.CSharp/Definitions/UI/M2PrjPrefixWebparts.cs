@@ -88,16 +88,28 @@ namespace M2RootNamespace.Definitions.UI
         };
 
 
-        //public static ContentEditorWebPartDefinition AboutSalesContent = new ContentEditorWebPartDefinition
-        //{
-        //    Title = "About Sales",
-        //    Id = "intrAboutSales",
+        public static ContentEditorWebPartDefinition AboutThisSite = new ContentEditorWebPartDefinition
+        {
+            Title = "About This Site",
+            Id = "intrAboutThisSite",
 
-        //    ZoneId = "RightColumn",
-        //    ZoneIndex = 10,
+            ZoneId = "LeftColumn",
+            ZoneIndex = 10,
 
-        //    ChromeType = BuiltInPartChromeType.TitleOnly,
-        //    ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/AboutSales/about-sales.html",
-        //};
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/AboutThisSite/about-site.html",
+        };
+
+        public static ContentEditorWebPartDefinition M2YammerFeed = new ContentEditorWebPartDefinition
+        {
+            Title = "SPMeta2 Yammer Network",
+            Id = "intrM2YammerNetwork",
+
+            ZoneId = "MiddleColumn",
+            ZoneIndex = 10,
+
+            ChromeType = BuiltInPartChromeType.TitleOnly,
+            ContentLink = "~sitecollection/Style Library/M2PrjPrefix.Intranet/Yammer/yammer-group-feed.html",
+        };
     }
 }

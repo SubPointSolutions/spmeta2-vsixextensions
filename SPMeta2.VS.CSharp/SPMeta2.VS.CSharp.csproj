@@ -91,10 +91,7 @@
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jquery-1.11.3.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\AboutSales\about-sales.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\ContactForm\contact-form.html">
+    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\AboutThisSite\about-site.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\js\M2PrjPrefix.Intranet.js">

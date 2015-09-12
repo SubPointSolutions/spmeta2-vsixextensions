@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using M2RootNamespace.Definitions.Pages;
 
 namespace M2RootNamespace.Definitions.Navigation
 {
@@ -33,6 +34,14 @@ namespace M2RootNamespace.Definitions.Navigation
         {
             Title = "Sales Events",
             Url = UrlUtility.CombineUrl("~sitecollection", M2ProjectPrefixLists.SalesEvents.CustomUrl),
+            IsExternal = true
+        };
+
+
+        public static TopNavigationNodeDefinition AboutThisSite = new TopNavigationNodeDefinition
+        {
+            Title = "About",
+            Url = UrlUtility.CombineUrl("~site/SitePages/", M2ProjectPrefixWebPartPages.AboutThisSite.FileName),
             IsExternal = true
         };
     }

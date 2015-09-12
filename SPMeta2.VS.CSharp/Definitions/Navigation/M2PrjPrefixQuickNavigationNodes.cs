@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using M2RootNamespace.Definitions.IA;
+using M2RootNamespace.Definitions.Pages;
 using SPMeta2.Definitions;
 using SPMeta2.Utils;
 
@@ -47,6 +48,13 @@ namespace M2RootNamespace.Definitions.Navigation
         {
             Title = "Sales Events",
             Url = UrlUtility.CombineUrl("~site", M2ProjectPrefixLists.SalesEvents.CustomUrl),
+            IsExternal = true
+        };
+
+        public static QuickLaunchNavigationNodeDefinition AboutThisSite = new QuickLaunchNavigationNodeDefinition
+        {
+            Title = "About",
+            Url = UrlUtility.CombineUrl("~site/SitePages/", M2ProjectPrefixWebPartPages.AboutThisSite.FileName),
             IsExternal = true
         };
     }
