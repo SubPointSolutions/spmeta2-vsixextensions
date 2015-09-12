@@ -30,8 +30,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="SPMeta2">
       <HintPath>..\packages\SPMeta2.Core.1.2.0-beta2\lib\net45\SPMeta2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SPMeta2.CSOM">
+      <HintPath>..\packages\SPMeta2.CSOM.Foundation.1.2.0-beta2\lib\net45\SPMeta2.CSOM.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SPMeta2.CSOM.Standard">
+      <HintPath>..\packages\SPMeta2.CSOM.Standard.1.2.0-beta2\lib\net45\SPMeta2.CSOM.Standard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SPMeta2.SSOM">
+      <HintPath>..\packages\SPMeta2.SSOM.Foundation.1.2.0-beta2\lib\net45\SPMeta2.SSOM.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SPMeta2.SSOM.Standard">
+      <HintPath>..\packages\SPMeta2.SSOM.Standard.1.2.0-beta2\lib\net45\SPMeta2.SSOM.Standard.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SPMeta2.Standard, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d71faae3bf28531a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SPMeta2.Core.Standard.1.2.0-beta2\lib\net45\SPMeta2.Standard.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,7 +69,6 @@
   <ItemGroup>
     <Compile Include="Consts\M2PrjPrefixConsts.cs" />
     <Compile Include="Definitions\Solutions\M2PrjPrefixSandboxSolutions.cs" />
-    <Compile Include="Definitions\DisplayTemplates\M2PrjPrefixSearchDisplayTemplates.cs" />
     <Compile Include="Definitions\Features\M2PrjPrefixWebFeatures.cs" />
     <Compile Include="Definitions\Features\M2PrjPrefixSiteFeatures.cs" />
     <Compile Include="Definitions\IA\M2PrjPrefixLists.cs" />
@@ -69,28 +93,19 @@
     <Compile Include="Definitions\Taxonomy\M2PrjPrefixTaxonomyTermGroups.cs" />
     <Compile Include="Definitions\UI\M2PrjPrefixWebparts.cs" />
     <Compile Include="Definitions\UI\M2PrjPrefixUserCustomActions.cs" />
-    <Compile Include="Extensions\ModelNodeSyntaxExtensions.cs" />
     <Compile Include="Extensions\ModelNodeExtensions.cs" />
     <Compile Include="Models\M2PrjPrefixSiteModel.cs" />
-    <Compile Include="Models\M2PrjPrefixWebModel.cs" />
+    <Compile Include="Models\M2PrjPrefixRootWebModel.cs" />
+    <Compile Include="Models\SubWebs\M2PrjPrefixCustomerWebModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\M2PrjPrefixProvisionService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\SubWebs\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\angular\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\backbone\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\bootstrap\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\caml.js\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\ember\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery-ui\" />
     <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\knockout\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\moment.js\" />
-    <Folder Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\spservices\" />
     <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="m2.png" />
     <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\ContactForm\contact-form.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -98,9 +113,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
-    <Content Include="sw-file-icon.png" />
-    <Content Include="_Definitions\_project.vstemplate.xml" />
-    <Content Include="_preprocess.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />
@@ -126,8 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="PSScripts\05.Recreate site collections.ps1" />
-    <None Include="PSScripts\10.Activate Site Loading.ps1" />
+    <None Include="PSScripts\00. Template.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

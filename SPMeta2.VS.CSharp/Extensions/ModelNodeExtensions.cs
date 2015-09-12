@@ -6,30 +6,41 @@ using System.Threading.Tasks;
 
 using SPMeta2.Definitions;
 using SPMeta2.Syntax.Default;
+using SPMeta2.Definitions.ContentTypes;
 
 namespace SPMeta2.VS.CSharp.Extensions
 {
     public static class ModelNodeExtensions
     {
+        // add your project specific extensions here 
+        // check how to created them here - http://docs.subpointsolutions.com/spmeta2/extensibility/writing-custom-syntax/
+
         #region methods
-        public static SiteModelNode M2ProjectPrefixImportFields(this SiteModelNode node, IEnumerable<FieldDefinition> fields)
-        {
-            foreach (var field in fields)
-                node.AddField(field);
 
-            return node;
-        } 
-
-        public static ListModelNode M2ProjectPrefixSetDefaultContentType(this ListModelNode node, ContentTypeDefinition contentType)
+        public static ListModelNode M2ProjectPrefixSetDefaultListContentType(this ListModelNode node, ContentTypeDefinition contentTypeDefinition)
         {
-           return M2ProjectPrefixSetDefaultContentType(node, contentType.Name);
+            return M2ProjectPrefixSetDefaultListContentType(node, contentTypeDefinition.Name);
         }
- 
-        public static ListModelNode M2ProjectPrefixSetDefaultContentType(this ListModelNode node, string contentTypeName)
-        {
-           //node.AddUniqueContentTypeFieldOrder(new )
 
-           return node;
+        /// <summary>
+        /// Sets content type as a default in the the target list.
+        /// </summary>
+        /// <param name="node">target list</param>
+        /// <param name="contentTypeName">content type name</param>
+        /// <returns></returns>
+        public static ListModelNode M2ProjectPrefixSetDefaultListContentType(this ListModelNode node, string contentTypeName)
+        {
+            // do some stuff
+            node.AddUniqueContentTypeOrder(new UniqueContentTypeOrderDefinition
+            {
+                ContentTypes = new List<ContentTypeLinkValue>
+                {
+                    new ContentTypeLinkValue{ ContentTypeName = contentTypeName }
+                }
+            });
+
+            // always return the same node, so that fluent API and chaining will be possible
+            return node;
         }
 
         #endregion

@@ -54,6 +54,8 @@ namespace SPMeta2.VS.Tooling.Forms
                 Options.SiteContentTypesGroupName = tbContentTypesGroup.Text.Trim();
 
             // platform
+            if (rbPlatformNoRefs.Checked)
+                Options.ProjectPlatform = ProjectPlatform.None;
             if (rbPlatformSP2013SSOM.Checked)
                 Options.ProjectPlatform = ProjectPlatform.SP2013SSOM;
             else if (rbPlatformSP2013CSOM.Checked)

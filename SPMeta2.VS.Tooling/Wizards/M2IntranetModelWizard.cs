@@ -40,7 +40,6 @@ namespace SPMeta2.VS.Tooling.Wizards
             HandleProjectPlatform(vsProject, _options);
             HandleProjectPrefix(project, _options);
 
-
             _wizard.ProjectFinishedGenerating(project);
         }
 
@@ -74,6 +73,24 @@ namespace SPMeta2.VS.Tooling.Wizards
 
         private void HandleProjectPlatform(VSProject project, M2IntranetProjectOptions options)
         {
+            // clean up
+            // remove all M2 and SharePoint related refs from the template
+            // they come later with NuGet or platform selector
+
+            // it's just easier to develop a template with all these refs
+
+            var refs2delete = project.References
+                              .OfType<Reference>()
+                              .Where(r => r.Name.ToLower().Contains("spmeta2")
+                                        || r.Name.ToLower().Contains("microsoft.sharepoint"))
+                              .ToArray();
+
+            for (int i = 0; i < refs2delete.Count(); i++)
+            {
+                refs2delete[i].Remove();
+            }
+
+            // readding needed refs, and then later NuGet will add M2 packages 
             switch (options.ProjectPlatform)
             {
                 case ProjectPlatform.SP2013SSOM:
@@ -140,7 +157,6 @@ namespace SPMeta2.VS.Tooling.Wizards
                 _options = form.Options;
 
                 ProjectPrefix = _options.ProjectPrefix;
-
 
                 // replacementsDictionary.Add("M2ProjectPrefix", _options.ProjectPrefix);
                 //replacementsDictionary.Add("$M2Prefix$", _options.);

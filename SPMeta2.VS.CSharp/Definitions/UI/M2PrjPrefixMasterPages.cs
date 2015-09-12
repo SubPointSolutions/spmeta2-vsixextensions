@@ -8,5 +8,6 @@ namespace M2RootNamespace.Definitions.UI
 {
     public static class M2ProjectPrefixMasterPages
     {
+        // define your master pages as per the samples below
     }
 }

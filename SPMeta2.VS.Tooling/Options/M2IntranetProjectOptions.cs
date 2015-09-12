@@ -9,6 +9,7 @@ namespace SPMeta2.VS.Tooling.Options
 
     public enum ProjectPlatform
     {
+        None,
         SP2013SSOM,
         SP2013CSOM,
         O365CSOM
