@@ -1,5 +1,6 @@
 ﻿using System;
 using M2RootNamespace.Models;
+using M2RootNamespace.Services;
 using Microsoft.SharePoint.Client;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SPMeta2.CSOM.Services;
@@ -48,6 +49,18 @@ namespace SPMeta2.VS.CSharp.Tests
                 // root web
                 provisionService.DeployWebModel(context, rootWebModel.GetStyleLibraryModel());
                 provisionService.DeployWebModel(context, rootWebModel.GetModel());
+            });
+        }
+
+        [TestMethod]
+        [TestCategory("SPMeta2.VS.CSharp.Site")]
+        public void CanProvisionIntranet_SiteModel_FromService()
+        {
+            WithCSOMContext(context =>
+            {
+                var intranetProvisionService = new M2ProjectPrefixCSOMProvisionService();
+
+                intranetProvisionService.DeployIntranet(context);
             });
         }
 
