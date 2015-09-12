@@ -113,6 +113,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
+    <Content Include="_Definitions\_project.vstemplate.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />

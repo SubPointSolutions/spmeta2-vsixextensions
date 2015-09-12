@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tooling", "Tooling", "{F47CE6E6-7087-4712-98F4-3578342A1966}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.CSharp.ProvisionConsole", "SPMeta2.VS.CSharp.ProvisionConsole\SPMeta2.VS.CSharp.ProvisionConsole.csproj", "{0329718A-87D3-41A3-9072-1102B1B8C2E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{C444255C-5613-4210-B2D8-830BCEBF31C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C444255C-5613-4210-B2D8-830BCEBF31C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C444255C-5613-4210-B2D8-830BCEBF31C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0329718A-87D3-41A3-9072-1102B1B8C2E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0329718A-87D3-41A3-9072-1102B1B8C2E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0329718A-87D3-41A3-9072-1102B1B8C2E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0329718A-87D3-41A3-9072-1102B1B8C2E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{E2E51197-70CC-452B-AD3A-E393FDBA873B} = {F47CE6E6-7087-4712-98F4-3578342A1966}
 		{BBAD25B7-EC8E-4D40-81AA-688F7A703839} = {F47CE6E6-7087-4712-98F4-3578342A1966}
 		{C444255C-5613-4210-B2D8-830BCEBF31C4} = {F47CE6E6-7087-4712-98F4-3578342A1966}
+		{0329718A-87D3-41A3-9072-1102B1B8C2E4} = {8F552B6C-B1EF-4D46-B609-2B80278978BF}
 	EndGlobalSection
 EndGlobal

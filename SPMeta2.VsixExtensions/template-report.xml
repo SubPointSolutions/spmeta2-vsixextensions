@@ -6,6 +6,7 @@
   </ItemTemplates>
   <ProjectTemplates>
     <ProjectTemplate Path="..\SPMeta2.VS.CSharp\_Definitions\_project.vstemplate.xml" Name="SPMeta2 Intranet Model" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
+    <ProjectTemplate Path="..\SPMeta2.VS.CSharp.ProvisionConsole\_Definitions\_project.vstemplate.xml" Name="SPMeta2 Provision Console Application" Description="Project description here" ProjectType="CSharp" ProjectSubType="" />
   </ProjectTemplates>
   <Snippets>
     <Snippet Title="Team site web definition" Description="Creates a new team web definition." Shortcut="m2FeatureSite" Path="Snippets\CSharp\SPMeta2\m2FeatureSite.snippet" />
