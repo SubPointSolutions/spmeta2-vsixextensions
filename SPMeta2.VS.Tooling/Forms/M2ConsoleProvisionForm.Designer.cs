@@ -185,6 +185,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "M2ConsoleProvisionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "M2 Console Provision Project Settings";
             this.gbActions.ResumeLayout(false);
             this.pRuntimeOptions.ResumeLayout(false);

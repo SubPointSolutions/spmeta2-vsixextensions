@@ -97,19 +97,18 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="m2.png" />
-    <Content Include="_preprocess.xml" />
-    <None Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\3rd part\jQuery\jq_">
+    <None Include="Modules\im_\st_\M2PrjPrefix.Intranet\3rd part\jQuery\jq_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\AboutThisSite\about-site.html">
+    <None Include="Modules\im_\st_\M2PrjPrefix.Intranet\AboutThisSite\ab_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\js\M2PrjPrefix.Intranet.js">
+    </None>
+    <None Include="Modules\im_\st_\M2PrjPrefix.Intranet\js\in_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\Implicit\Style Library\M2PrjPrefix.Intranet\Yammer\yammer-group-feed.html">
+    </None>
+    <None Include="Modules\im_\st_\M2PrjPrefix.Intranet\Yammer\ya_">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </None>
     <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
     <Content Include="Packages\microsoft.sharepointonline.csom.16.1.3912.1204.nupkg" />
   </ItemGroup>

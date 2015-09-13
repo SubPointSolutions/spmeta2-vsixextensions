@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SPMeta2.VS.Visualizers")]
+[assembly: AssemblyTitle("Releases")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SPMeta2.VS.Visualizers")]
+[assembly: AssemblyProduct("Releases")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("724bc2d3-83bb-47bd-89d0-3745a3c3b94a")]
+[assembly: Guid("0569b51f-6c0e-4bd9-ae9c-661cfecee897")]
 
 // Version information for an assembly consists of the following four values:
 //

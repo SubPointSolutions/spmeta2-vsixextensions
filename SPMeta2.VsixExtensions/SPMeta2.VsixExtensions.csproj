@@ -108,6 +108,10 @@
     <None Include="ItemTemplates\SPMeta2\Fields\Definitions\Web.csharp.vstemplat-" />
     <None Include="ItemTemplates\SPMeta2\Fields\Definitions\Web.VB.vstemplat-" />
     <None Include="key.snk" />
+    <Content Include="Resources\ms-pl.rtf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="Snippets\CSharp\SPMeta2\m2FeatureSite.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ListDocumentLibrary.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ListView.snippet" />

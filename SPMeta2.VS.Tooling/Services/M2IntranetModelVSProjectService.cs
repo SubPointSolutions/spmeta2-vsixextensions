@@ -24,7 +24,13 @@ namespace SPMeta2.VS.Tooling.Services
             HandleExcludedProjectFiles(project, options);
             HandleRenamedFiles(project, new Dictionary<string, string>
             {
-                { "jq_", "jquery-1.11.3.min.js" }
+                { "im_", "Implicit" },
+                { "st_", "Style Library" },
+
+                { "jq_", "jquery-1.11.3.min.js" },
+                { "ab_", "about-site.html" },
+                { "in_", options.M2ProjectPrefix + ".Intranet.js" },
+                { "ya_", "yammer-group-feed.html" }
             });
         }
 
