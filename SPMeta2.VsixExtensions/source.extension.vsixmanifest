@@ -6,7 +6,7 @@
     <Description xml:space="preserve">M2 extension adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and productive.</Description>
     <MoreInfo>http://docs.subpointsolutions.com/spmeta2</MoreInfo>
     <License>Microsoft Public License (MS-PL)</License>
-    <GettingStartedGuide>http://docs.subpointsolutions.com/spmeta2</GettingStartedGuide>
+    <GettingStartedGuide>https://github.com/SubPointSolutions/spmeta2-vsixextensions</GettingStartedGuide>
     <Icon>Resources\m2.png</Icon>
     <PreviewImage>Resources\m2.png</PreviewImage>
     <Tags>SPMeta2 M2 SharePoint SP2013 SP2010 O365 Office365 Office365Dev Provision </Tags>

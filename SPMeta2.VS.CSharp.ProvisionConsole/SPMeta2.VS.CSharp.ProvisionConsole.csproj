@@ -11,6 +11,10 @@
     <AssemblyName>SPMeta2.VS.CSharp.ProvisionConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <AssemblyFileVersionSettings>None.None.DateStamp.TimeStamp</AssemblyFileVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,13 +56,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="O365Program.cs" />
+    <Compile Include="SSOMProgram.cs" />
+    <Compile Include="CSOMProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ConsoleAppService.cs" />
+    <Compile Include="Utils\ConsoleUtilsO365.cs" />
+    <Compile Include="Utils\ConsoleUtilsSSOM.cs" />
+    <Compile Include="Utils\ConsoleUtilsCSOM.cs" />
+    <Compile Include="Utils\ConsoleUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="AppSettings.tt_" />
+    <Content Include="Packages\microsoft.sharepointonline.csom.16.1.3912.1204.nupkg" />
+    <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.Core.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.Core.Standard.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.csom.foundation-v16.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Foundation-v16.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Foundation.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard-v16.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Standard-v16.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.CSOM.Standard.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Foundation-v14.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.foundation.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.standard.1.1.100.nupkg" />
+    <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
     <None Include="PSScripts\00. Template.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -68,6 +94,7 @@
     <Content Include="_Definitions\_project.vstemplate.xml" />
     <Content Include="_preprocess.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -18,7 +18,7 @@ using VSLangProj;
 
 namespace SPMeta2.VS.Tooling.Wizards
 {
-    public class M2ProvisionConsoleWizard : M2WizardBase<M2ConsoleProvisionProjectService, M2ConsoleProjectOptions, HiddenForm<M2ConsoleProjectOptions>>
+    public class M2ProvisionConsoleWizard : M2WizardBase<M2ConsoleProvisionProjectService, M2ConsoleProjectOptions, M2ConsoleProvisionForm>
     {
 
     }

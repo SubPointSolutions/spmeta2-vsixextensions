@@ -21,6 +21,12 @@ namespace M2RootNamespace.Definitions.Features
             def.Enable = true;
         });
 
+        public static FeatureDefinition WikiPageHomePage = BuiltInWebFeatures.WikiPageHomePage.Inherit(def =>
+        {
+            def.Enable = true;
+        });
+
+
         #region samples
 
         ///// <summary>

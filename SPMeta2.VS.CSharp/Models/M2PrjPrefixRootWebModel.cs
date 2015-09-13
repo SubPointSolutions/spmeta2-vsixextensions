@@ -45,6 +45,7 @@ namespace M2RootNamespace.Models
                 web
                     .AddWebFeature(M2ProjectPrefixWebFeatures.DisableMinimalDownloadStrategy)
                     .AddWebFeature(M2ProjectPrefixWebFeatures.EnableTeamCollabirationLists)
+                    .AddWebFeature(M2ProjectPrefixWebFeatures.WikiPageHomePage)
 
                     .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.CompanyDocuments)
                     .AddTopNavigationNode(M2ProjectPrefixTopNavigationNodes.SaleTasks)

@@ -9,6 +9,7 @@ using EnvDTE;
 using SPMeta2.VS.Tooling.Consts;
 using SPMeta2.VS.Tooling.Options;
 using SPMeta2.VS.Tooling.Utils;
+using VSLangProj;
 
 namespace SPMeta2.VS.Tooling.Services
 {
@@ -145,5 +146,147 @@ namespace SPMeta2.VS.Tooling.Services
 
             File.WriteAllText(vsDefPath, xDoc.ToString());
         }
+
+
+        // M2ProjectOptions
+
+        protected virtual List<string> GetDefaultNuGetPackagesForProjectOptions(M2ProjectOptions options)
+        {
+            var packageIds = new List<string>();
+
+            switch (options.ProjectType)
+            {
+                case ProjectType.Foundation:
+                    {
+                        packageIds.Add("spmeta2.core");
+                    } break;
+
+                case ProjectType.Standard:
+                    {
+                        packageIds.Add("spmeta2.core");
+                        packageIds.Add("spmeta2.core.standard");
+                    } break;
+            }
+
+            switch (options.ProjectPlatform)
+            {
+                case ProjectPlatform.SP2013SSOM:
+                    {
+                        packageIds.Add("spmeta2.core");
+                        packageIds.Add("spmeta2.ssom.foundation");
+
+                        if (options.ProjectType == ProjectType.Standard)
+                        {
+                            packageIds.Add("spmeta2.ssom.standard");
+                        }
+
+                    }; break;
+
+                case ProjectPlatform.SP2013CSOM:
+                    {
+                        packageIds.Add("spmeta2.core");
+                        packageIds.Add("spmeta2.csom.foundation");
+
+                        if (options.ProjectType == ProjectType.Standard)
+                        {
+                            packageIds.Add("spmeta2.csom.standard");
+                        }
+                    }; break;
+
+                case ProjectPlatform.O365CSOM:
+                    {
+                        packageIds.Add("spmeta2.core");
+                        packageIds.Add("SPMeta2.CSOM.Foundation-v16");
+
+                        packageIds.Add("microsoft.sharepointonline.csom");
+
+                        if (options.ProjectType == ProjectType.Standard)
+                        {
+                            packageIds.Add("SPMeta2.CSOM.Standard-v16");
+                        }
+                    }; break;
+            }
+
+            return packageIds.Distinct().ToList();
+        }
+
+        protected virtual void HandleDefaultReferenciesForProjectOptions(VSProject project, M2ProjectOptions options)
+        {
+            // adding correct
+            switch (options.ProjectPlatform)
+            {
+                case ProjectPlatform.SP2013SSOM:
+                    {
+                        project.References.Add("Microsoft.SharePoint");
+                        project.References.Add("Microsoft.SharePoint.Security");
+
+                        if (options.ProjectType == ProjectType.Standard)
+                        {
+                            project.References.Add("Microsoft.SharePoint.Portal");
+                            project.References.Add("Microsoft.SharePoint.Publishing");
+                            project.References.Add("Microsoft.SharePoint.Taxonomy");
+                        }
+                    }
+                    break;
+
+                case ProjectPlatform.SP2013CSOM:
+                    {
+                        project.References.Add("Microsoft.SharePoint.Client");
+                        project.References.Add("Microsoft.SharePoint.Client.Runtime");
+
+                        if (options.ProjectType == ProjectType.Standard)
+                        {
+                            project.References.Add("Microsoft.SharePoint.Client.Publishing");
+                            project.References.Add("Microsoft.SharePoint.Client.Taxonomy");
+                        }
+                    }
+                    break;
+
+                case ProjectPlatform.O365CSOM:
+                    {
+                        // skip it, it'll be via NuGet
+
+                        //project.References.Add("Microsoft.SharePoint.Client");
+                        //project.References.Add("Microsoft.SharePoint.Client.Runtime");
+
+                        //if (options.ProjectType == ProjectType.Standard)
+                        //{
+                        //    project.References.Add("Microsoft.SharePoint.Client.Publishing");
+                        //    project.References.Add("Microsoft.SharePoint.Client.Taxonomy");
+                        //}
+                    }
+                    break;
+            }
+        }
+
+        protected virtual void HandleDefaultProjectPrefix(Project project, M2IntranetProjectOptions options)
+        {
+            var projectPrefix = options.ProjectPrefix;
+
+            if (!string.IsNullOrEmpty(projectPrefix))
+            {
+                var it = new ProjectItemIterator(new[] { project }).GetEnumerator();
+
+                while (it.MoveNext())
+                {
+                    var item = it.Current;
+
+                    if (!string.IsNullOrEmpty(item.Name))
+                    {
+                        if (item.Name == "Packages")
+                        {
+                            item.Remove();
+                        }
+
+                        if (item.Name.StartsWith("M2PrjPrefix"))
+                            item.Name = item.Name.Replace("M2PrjPrefix", options.ProjectPrefix);
+
+                        if (item.Name.StartsWith("M2ProjectPrefix"))
+                            item.Name = item.Name.Replace("M2ProjectPrefix", options.ProjectPrefix);
+                    }
+                }
+            }
+        }
+
     }
 }
