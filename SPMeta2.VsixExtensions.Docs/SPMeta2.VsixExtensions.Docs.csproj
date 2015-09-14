@@ -49,6 +49,9 @@
     <Content Include="Resources\General-concepts\img\M2ProjectPrefix.png" />
     <Content Include="Resources\General-concepts\img\M2ProvisionServiceFolder.png" />
     <Content Include="Resources\General-concepts\img\M2Solution.png" />
+    <Content Include="Resources\Home\img\M2ModelProjectExpanded.png" />
+    <Content Include="Resources\Home\img\M2NewProjectWizard.png" />
+    <Content Include="Resources\Home\img\M2NewProjectWizard.Runtime.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
