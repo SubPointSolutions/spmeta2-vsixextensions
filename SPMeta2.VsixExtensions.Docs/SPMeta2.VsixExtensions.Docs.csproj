@@ -47,6 +47,7 @@
     <Content Include="Resources\General-concepts\img\M2ModelProjectExpanded.png" />
     <Content Include="Resources\General-concepts\img\M2ModelsFolder.png" />
     <Content Include="Resources\General-concepts\img\M2ProjectPrefix.png" />
+    <Content Include="Resources\General-concepts\img\M2ProvisionServiceFolder.png" />
     <Content Include="Resources\General-concepts\img\M2Solution.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
