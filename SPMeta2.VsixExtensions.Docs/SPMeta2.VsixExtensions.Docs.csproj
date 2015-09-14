@@ -41,8 +41,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\Img\" />
+    <Content Include="Resources\General-concepts\img\M2DefinitionsFolder.png" />
+    <Content Include="Resources\General-concepts\img\M2ModelProjectExpanded.png" />
+    <Content Include="Resources\General-concepts\img\M2ModelsFolder.png" />
+    <Content Include="Resources\General-concepts\img\M2ProjectPrefix.png" />
+    <Content Include="Resources\General-concepts\img\M2Solution.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
