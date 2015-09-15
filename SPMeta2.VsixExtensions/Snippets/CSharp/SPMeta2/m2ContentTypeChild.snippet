@@ -6,12 +6,12 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>Boolean Field Definition</Title>
+      <Title>Content Type Definition as a child</Title>
       <Author>SubPoint Solutions</Author>
-      <Description>Creates a new text field definition.</Description>
+      <Description>Creates a content type based on giving parent.</Description>
       <HelpUrl>
       </HelpUrl>
-      <Shortcut>m2ContentTypeDocument</Shortcut>
+      <Shortcut>m2ContentTypeChild</Shortcut>
     </Header>
     <Snippet>
       <Imports>
@@ -31,9 +31,15 @@
       <Declarations>
         <Literal Editable="true">
           <ID>name</ID>
+          <Default>NewContentType</Default>
         </Literal>
         <Literal Editable="true">
           <ID>contentTypeName</ID>
+          <Default>NewContentType</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>parentContentType</ID>
+          <Default>parentContentType</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp" Delimiter="$">
@@ -41,7 +47,7 @@
         {
             Name = "$contentTypeName$",
             Id = new Guid("new-guid-here"),
-            ParentContentTypeId = BuiltInContentTypeId.Event,
+            ParentContentTypeId = $parentContentType$.GetContentTypeId(),
             Group = string.Empty
         };
 	    ]]>

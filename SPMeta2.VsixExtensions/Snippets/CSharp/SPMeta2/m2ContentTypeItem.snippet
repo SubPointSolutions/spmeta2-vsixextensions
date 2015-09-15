@@ -6,9 +6,9 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>Boolean Field Definition</Title>
+      <Title>Content Type Definition as item</Title>
       <Author>SubPoint Solutions</Author>
-      <Description>Creates a new text field definition.</Description>
+      <Description>Creates a new item based content type.</Description>
       <HelpUrl>
       </HelpUrl>
       <Shortcut>m2ContentTypeItem</Shortcut>
@@ -31,9 +31,11 @@
       <Declarations>
         <Literal Editable="true">
           <ID>name</ID>
+          <Default>NewContentType</Default>
         </Literal>
         <Literal Editable="true">
-          <ID>$contentTypeName$</ID>
+          <ID>contentTypeName</ID>
+          <Default>NewContentType</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp" Delimiter="$">

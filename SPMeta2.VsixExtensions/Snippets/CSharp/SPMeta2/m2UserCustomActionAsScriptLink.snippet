@@ -6,9 +6,9 @@
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
       </SnippetTypes>
-      <Title>Team site web definition</Title>
+      <Title>Custom User Action as ScriptLink</Title>
       <Author>SubPoint Solutions</Author>
-      <Description>Creates a new team web definition.</Description>
+      <Description>Creates a new custom user action.</Description>
       <HelpUrl>
       </HelpUrl>
       <Shortcut>m2UserCustomActionAsScriptLink</Shortcut>
@@ -28,12 +28,15 @@
       <Declarations>
         <Literal Editable="true">
           <ID>name</ID>
+          <Default>NewCustomUserAction</Default>
         </Literal>
         <Literal Editable="true">
           <ID>userCustomActionName</ID>
+          <Default>NewCustomUserActionname</Default>
         </Literal>
         <Literal Editable="true">
           <ID>scriptSrc</ID>
+          <Default>ScriptLinkUrl</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp" Delimiter="$">

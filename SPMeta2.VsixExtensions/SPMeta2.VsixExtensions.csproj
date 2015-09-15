@@ -116,9 +116,9 @@
     <None Include="Snippets\CSharp\SPMeta2\m2ListDocumentLibrary.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ListView.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ListGeneric.snippet" />
-    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeChild.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeEvent.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeDocument.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeChild.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2ContentTypeItem.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2FieldCurrency.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2FieldDateTime.snippet" />
