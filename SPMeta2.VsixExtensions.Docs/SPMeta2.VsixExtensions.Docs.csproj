@@ -54,6 +54,12 @@
     <Content Include="Resources\Home\img\M2NewProjectWizard.Runtime.png" />
     <Content Include="Resources\M2-project-templates\M2.MyIntranet.Full-600.png" />
     <Content Include="Resources\M2-project-templates\M2.MyIntranet.Full.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.AppSettingsItem.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.AppSettingsItemT4.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.AppSettingsItemT4Generation.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.NewProject.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.ProjectStructure.png" />
+    <Content Include="Resources\M2-project-templates\M2Console.Wizard.png" />
     <Content Include="Resources\M2-project-templates\M2ModelProjectExpanded.png" />
     <Content Include="Resources\M2-project-templates\M2NewProjectWizard.png" />
     <Content Include="Resources\M2-project-templates\M2NewProjectWizard.Runtime.png" />
