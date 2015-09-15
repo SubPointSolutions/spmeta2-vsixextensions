@@ -32,9 +32,9 @@ There are a bunch of snippets, a few project templates and debugger visualizer t
 Please consider the following links to get familiar with the general concepts, project templates, snippets and creating new projects.
 
 * [General Concepts](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/General-concepts)
-* [Project templates](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-project-templates)
-* [Snippets](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-snippets)
-* [Creating new projects](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/Starting-new-M2-projects)
+* [M2 Intranet Model project](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-Intranet-Model-project)
+* [M2 Console Provision project](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-Console-Provision-project)
+* [M2 Snippets](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-Snippets)
 
 ### Contribution
 We keen to hear back from the community improving both [SPMeta2](https://github.com/SubPointSolutions/spmeta2) and [SPMeta2 Extensions for Visual Studio](https://github.com/SubPointSolutions/spmeta2-vsixextensions). Whenever you like or dislike something, give us a shot so that we can fix that:
