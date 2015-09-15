@@ -1,6 +1,11 @@
 # SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier, productive and also bring consistency across your projects, people and teams.
 
+### Downloads
+
+* [spmeta2-vsixextensions 1.2.10.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.10.0)
+* [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases)
+
 ### The story and experience
 Whenever you build a proof-of-concept, corporate intranet or six-figures project on top of SharePoint platform, 
 [SPMeta2/M2]("https://github.com/SubPointSolutions/spmeta2") is all you need to deploy SharePoint artefacts in most enjoyable, smooth, testable and repeatable way. [SPMeta2]("https://github.com/SubPointSolutions/spmeta2") is a .NET library that offers a  hassle-free fluent API supporting not only SharePoint 2010, 2013 and O365, but also CSOM and SSOM. It is the first building block to well-structured and consistent projects.
@@ -30,13 +35,6 @@ Please consider the following links to get familiar with the general concepts, p
 * [Project templates](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-project-templates)
 * [Snippets](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-snippets)
 * [Creating new projects](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/Starting-new-M2-projects)
-
-### Downloads
-
-* [spmeta2-vsixextensions 1.2.10.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.10.0)
-* [spmeta2-vsixextensions 1.0.1.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.0.1.0)
-* [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases)
-
 
 ### Contribution
 We keen to hear back from the community improving both [SPMeta2](https://github.com/SubPointSolutions/spmeta2) and [SPMeta2 Extensions for Visual Studio](https://github.com/SubPointSolutions/spmeta2-vsixextensions). Whenever you like or dislike something, give us a shot so that we can fix that:
