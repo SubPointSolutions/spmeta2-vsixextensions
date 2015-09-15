@@ -1,4 +1,4 @@
-# SPMeta2 Extensions for Visual Studio
+Documentation# SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier, productive and also bring consistency across your projects, people and teams.
 
 ### The story and experience
@@ -30,6 +30,13 @@ Please consider the following links to get familiar with the general concepts, p
 * [Project templates](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-project-templates)
 * [Snippets](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/M2-snippets)
 * [Creating new projects](https://github.com/SubPointSolutions/spmeta2-vsixextensions/wiki/Starting-new-M2-projects)
+
+### Downloads
+
+* [spmeta2-vsixextensions 1.2.10.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/master/Releases/M2-vsixextensions%201.2.10.0)
+* [spmeta2-vsixextensions 1.0.1.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/master/Releases/M2-vsixextensions%201.0.1.0)
+* [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/master/Releases)
+
 
 ### Contribution
 We keen to hear back from the community improving both [SPMeta2](https://github.com/SubPointSolutions/spmeta2) and [SPMeta2 Extensions for Visual Studio](https://github.com/SubPointSolutions/spmeta2-vsixextensions). Whenever you like or dislike something, give us a shot so that we can fix that:

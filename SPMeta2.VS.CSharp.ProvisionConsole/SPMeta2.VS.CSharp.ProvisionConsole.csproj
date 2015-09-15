@@ -68,31 +68,22 @@
   <ItemGroup>
     <None Include="App.config" />
     <Content Include="Packages\microsoft.sharepointonline.csom.16.1.3912.1204.nupkg" />
-    <Content Include="Packages\spmeta2.core.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.Core.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\SPMeta2.Core.Standard.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.csom.foundation-v16.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.CSOM.Foundation-v16.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.csom.foundation.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.CSOM.Foundation.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.csom.standard-v16.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.CSOM.Standard-v16.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.csom.standard.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.CSOM.Standard.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\SPMeta2.SSOM.Foundation-v14.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.ssom.foundation.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.SSOM.Foundation.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.0-beta2.nupkg" />
-    <Content Include="Packages\spmeta2.ssom.standard.1.1.100.nupkg" />
-    <Content Include="Packages\SPMeta2.SSOM.Standard.1.2.0-beta2.nupkg" />
+    <Content Include="Packages\spmeta2.core.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.core.standard.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.csom.foundation-v16.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.csom.foundation.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard-v16.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.csom.standard.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.foundation-v14.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.foundation.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.standard-v14.1.2.10.nupkg" />
+    <Content Include="Packages\spmeta2.ssom.standard.1.2.10.nupkg" />
     <None Include="PSScripts\00. Template.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="m2.png" />
-    <Content Include="_Definitions\_project.vstemplate.xml" />
-    <Content Include="_preprocess.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

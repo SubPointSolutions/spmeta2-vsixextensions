@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="M2-vsixextensions 1.0.1.0\SPMeta2.VsixExtensions.vsix" />
+    <None Include="M2-vsixextensions 1.2.10.0\SPMeta2.VsixExtensions.vsix" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

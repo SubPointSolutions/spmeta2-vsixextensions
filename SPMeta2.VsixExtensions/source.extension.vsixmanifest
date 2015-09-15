@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="SPMeta2.VsixExtensions..70e01dce-1338-4e9f-a7a4-484d7e8a5703" Version="1.0.1.0" Language="en-US" Publisher="SubPoint Solutions" />
+    <Identity Id="SPMeta2.VsixExtensions..70e01dce-1338-4e9f-a7a4-484d7e8a5703" Version="1.2.10.0" Language="en-US" Publisher="SubPoint Solutions" />
     <DisplayName>SPMeta2 Extensions</DisplayName>
     <Description xml:space="preserve">M2 extension adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and productive.</Description>
     <MoreInfo>http://docs.subpointsolutions.com/spmeta2</MoreInfo>
