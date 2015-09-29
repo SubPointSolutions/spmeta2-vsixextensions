@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>New SPMeta2 web model</Title>
+      <Author>SubPoint Solutions</Author>
+      <Description>Creates a new SPMeta2 web model.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>m2webmodel</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System.Collections.ObjectModel</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Definitions</Namespace>
+        </Import>
+        <Import>
+          <Namespace>SPMeta2.Enumerations</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>model</ID>
+          <Default>model</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$">
+        <![CDATA[var model = SPMeta2Model.NewWebModel(web =>
+            {
+
+            });
+	    ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+
+</CodeSnippets>
