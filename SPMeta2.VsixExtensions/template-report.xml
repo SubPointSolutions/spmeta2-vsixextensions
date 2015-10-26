@@ -38,9 +38,9 @@
     <Snippet Title="Taxonomy Term Group Definition" Description="Creates a new taxonomy term group definition." Shortcut="m2TaxonomyTermGroup" Path="Snippets\CSharp\SPMeta2\m2TaxonomyTermGroup.snippet" />
     <Snippet Title="TopNavigation Node Definition" Description="Creates a new top navigation definition." Shortcut="m2TopNavigationNode" Path="Snippets\CSharp\SPMeta2\m2TopNavigationNode.snippet" />
     <Snippet Title="Taxonomy Store Definition" Description="Creates a new taxonomy store definition." Shortcut="m2TaxonomyStore" Path="Snippets\CSharp\SPMeta2\m2TaxonomyStore.snippet" />
-    <Snippet Title="New SPMeta2 site model" Description="Creates a new SPMeta2 site model." Shortcut="m2SiteModel" Path="Snippets\CSharp\SPMeta2\m2SiteModel.snippet" />
+    <Snippet Title="New SPMeta2 site model" Description="Creates a new SPMeta2 site model." Shortcut="m2sitemodel" Path="Snippets\CSharp\SPMeta2\m2SiteModel.snippet" />
     <Snippet Title="Web Navigation Settings Definition" Description="Creates a new web navigation settings." Shortcut="m2WebNavigationSettings" Path="Snippets\CSharp\SPMeta2\m2WebNavigationSettings.snippet" />
-    <Snippet Title="New SPMeta2 web model" Description="Creates a new SPMeta2 web model." Shortcut="m2WebModel" Path="Snippets\CSharp\SPMeta2\m2WebModel.snippet" />
+    <Snippet Title="New SPMeta2 web model" Description="Creates a new SPMeta2 web model." Shortcut="m2webmodel" Path="Snippets\CSharp\SPMeta2\m2WebModel.snippet" />
     <Snippet Title="Wiki Page Definition" Description="Creates a new wiki page definition." Shortcut="m2WikiPage" Path="Snippets\CSharp\SPMeta2\m2WikiPage.snippet" />
     <Snippet Title="Web Part Page Definition" Description="Creates a new web part page definition." Shortcut="m2WebPartPage" Path="Snippets\CSharp\SPMeta2\m2WebPartPage.snippet" />
     <Snippet Title="Publishing site web definition" Description="Creates a new publishing web definition." Shortcut="m2WebPublishingPortal" Path="Snippets\CSharp\SPMeta2\m2WebPublishingPortal.snippet" />
