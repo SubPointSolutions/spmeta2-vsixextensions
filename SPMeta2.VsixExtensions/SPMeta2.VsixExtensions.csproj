@@ -24,9 +24,10 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
     <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <AssemblyFileVersionSettings>None.None.DateStamp.TimeStamp</AssemblyFileVersionSettings>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -140,7 +141,9 @@
     <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyTermGroup.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2TopNavigationNode.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2TaxonomyStore.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2SiteModel.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2WebNavigationSettings.snippet" />
+    <None Include="Snippets\CSharp\SPMeta2\m2WebModel.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2WikiPage.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2WebPartPage.snippet" />
     <None Include="Snippets\CSharp\SPMeta2\m2WebPublishingPortal.snippet" />
