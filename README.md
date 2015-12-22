@@ -3,7 +3,7 @@
 
 ### Downloads
 
-* [spmeta2-vsixextensions 1.2.10.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.10.0)
+* [spmeta2-vsixextensions 1.2.30.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.30.0)
 * [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases)
 
 ### The story and experience
