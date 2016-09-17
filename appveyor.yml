@@ -3,7 +3,7 @@ test: off
 clone_folder: c:\prj
 
 build_script: 
-    - ps: c:\prj\spmeta2-vsixextensions\Build\build.ps1 -Verbosity Minimal -Target "Default-Appveyor"
+    - ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Default-Appveyor"
 
 artifacts:
     - path: '**\packages\*.nupkg'
