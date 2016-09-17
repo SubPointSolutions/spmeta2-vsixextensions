@@ -8,6 +8,50 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Debug");
 
+//////////////////////////////////////////////////////////////////////
+// PREPARATION
+//////////////////////////////////////////////////////////////////////
+
+var solutionDirectory = "./../"; 
+var solutionFilePath = "./../SPMeta2.VsixExtensions.sln";
+
+var buildDirs = new [] {
+
+    new DirectoryPath("./../SPMeta2.VS.Tooling/bin/"),
+
+    new DirectoryPath("./../SPMeta2.VS.Visualizers/bin/"),
+    new DirectoryPath("./../SPMeta2.VS.Visualizers.Tests/bin/"),
+
+    new DirectoryPath("./../SPMeta2.VsixExtensions/bin/"),
+    new DirectoryPath("./../SPMeta2.VsixExtensions.Docs/bin/")
+};
+
+Task("Clean")
+    //.IsDependentOn("Validate-Environment")
+    .Does(() =>
+{
+    foreach(var dirPath in buildDirs) {
+        CleanDirectory(dirPath);
+    }        
+});
+
+Task("Restore-NuGet-Packages")
+    .IsDependentOn("Clean")
+    .Does(() =>
+{
+    NuGetRestore(solutionFilePath);
+});
+
+
+Task("Build-VSIX")
+    .IsDependentOn("Restore-NuGet-Packages")
+    .Does(() => 
+{
+    Information(string.Format("Building VSIX..."));
+
+	MSBuild(solutionFilePath);
+});
+
 Task("Docs-Publishing")
     .Does(() =>
 {
@@ -104,6 +148,9 @@ Task("Default-Docs")
 
 Task("Default-Appveyor")
     .IsDependentOn("Docs-Publishing");
+
+Task("Default")
+    .IsDependentOn("Build-VSIX");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
