@@ -155,6 +155,7 @@ Task("Default-Docs")
     .IsDependentOn("Docs-Publishing");
 
 Task("Default-Appveyor")
+	.IsDependentOn("Build-VSIX")
     .IsDependentOn("Docs-Publishing");
 
 Task("Default")
