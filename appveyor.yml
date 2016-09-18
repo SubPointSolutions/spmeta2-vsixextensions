@@ -6,4 +6,4 @@ build_script:
     - ps: c:\prj\Build\build.ps1 -Verbosity Minimal -Target "Default"
 
 artifacts:
-    - path: '**\packages\*.nupkg'
+    - path: '**\*.vsix'
