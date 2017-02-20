@@ -10,13 +10,23 @@ using SPMeta2.VS.Tooling.Consts;
 using SPMeta2.VS.Tooling.Options;
 using SPMeta2.VS.Tooling.Utils;
 using VSLangProj;
+using System.Windows.Forms;
 
 namespace SPMeta2.VS.Tooling.Services
 {
     public abstract class VSProjectSetupServiceBase<TOptions>
        where TOptions : M2ProjectOptions
     {
+        #region properties
         public TOptions ProjectOptions { get; set; }
+
+        public string UpdateVSProjectNuGetPackagesFolderPath { get; set; }
+
+        public string UpdateVSProjectNuGetPackagesFilePath { get; set; }
+
+        #endregion
+
+        #region methods
 
         public abstract void SetupM2IntranetProject(Project vsProject, TOptions options);
 
@@ -114,11 +124,11 @@ namespace SPMeta2.VS.Tooling.Services
         protected virtual XElement CreateNuGetPackageNode(string packageId, string version)
         {
             // hack, we know, will fix later
-            if (packageId.ToLower().Contains("microsoft.sharepointonline.csom"))
+            if (packageId.ToLower().Contains("Microsoft.SharePointOnline.CSOM".ToLower()))
             {
                 return new XElement("package",
                   new XAttribute("id", packageId),
-                  new XAttribute("version", "16.1.3912.1204")
+                  new XAttribute("version", M2Consts.SharePointOnlineRuntimeVersion)
                   );
             }
 
@@ -132,7 +142,17 @@ namespace SPMeta2.VS.Tooling.Services
         {
             var packages = packageIds.Select(p => CreateNuGetPackageNode(p));
 
-            var xDoc = XDocument.Parse(File.ReadAllText(vsDefPath));
+            XDocument xDoc = null;
+
+            try
+            {
+                xDoc = XDocument.Parse(File.ReadAllText(vsDefPath));
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Cannot read:" + ee);
+            }
+
             var wizardDataNode =
                 xDoc.Root.Descendants().FirstOrDefault(e => e.Name.LocalName.ToUpper() == "WizardData".ToUpper());
 
@@ -144,11 +164,51 @@ namespace SPMeta2.VS.Tooling.Services
                 wizardDataNode.Add(new XElement("packages", packages));
             }
 
-            File.WriteAllText(vsDefPath, xDoc.ToString());
+            try
+            {
+                // replacing project file as VS2015 lock original one preventing it from the updates
+                // VSProjectSetupServiceBase class updates the project file with correct NuGet packages
+
+                // Investigate Visual Studio 2015 Community / Premium support #23
+                // https://github.com/SubPointSolutions/spmeta2-vsixextensions/issues/23 
+
+                var tmpFolder = Path.GetTempPath();
+                var vsExtensionsTmpFolder = Path.Combine(tmpFolder, "SPMeta2.VsixExtensions");
+                var projectTmpFolder = Path.Combine(vsExtensionsTmpFolder, Guid.NewGuid().ToString("N"));
+
+                Directory.CreateDirectory(projectTmpFolder);
+
+                UpdateVSProjectNuGetPackagesFolderPath = projectTmpFolder;
+                UpdateVSProjectNuGetPackagesFilePath = Path.Combine(projectTmpFolder, "_project.vstemplate");
+
+                File.WriteAllText(UpdateVSProjectNuGetPackagesFilePath, xDoc.ToString());
+
+                // and we need also cppy all the nuget packages to that folder
+                var srcFolder = Path.GetDirectoryName(vsDefPath);
+                var packagesFolder = Path.Combine(srcFolder, "Packages");
+
+                if (Directory.Exists(packagesFolder))
+                {
+                    var dirInfo = new DirectoryInfo(packagesFolder);
+                    var dirFiles = dirInfo.GetFiles();
+
+                    foreach (FileInfo fi in dirFiles)
+                    {
+                        fi.CopyTo(Path.Combine(projectTmpFolder, fi.Name), true);
+                    }
+                }
+                else
+                {
+                    throw new Exception(string.Format("Cannot find packages folder:[{0}] while copying NuGet packages to [{1}]",
+                                    packagesFolder,
+                                    projectTmpFolder));
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Cannot write:" + ee);
+            }
         }
-
-
-        // M2ProjectOptions
 
         protected virtual List<string> GetDefaultNuGetPackagesForProjectOptions(M2ProjectOptions options)
         {
@@ -287,6 +347,8 @@ namespace SPMeta2.VS.Tooling.Services
                 }
             }
         }
+
+        #endregion
 
     }
 }

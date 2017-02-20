@@ -72,17 +72,51 @@ namespace SPMeta2.VS.Tooling.Wizards
             {
                 _projectOptions = _wizardForm.ProjectOptions;
 
-                // update replacement mapppings
-                _projectSetupService.MapProjectProperties(replacementsDictionary, _projectOptions);
+                try
+                {
+                    // update replacement mapppings
+                    _projectSetupService.MapProjectProperties(replacementsDictionary, _projectOptions);
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(string.Format("MapProjectProperties:" + ee));
+                }
+
+                var res = false;
+
+                try
+                {
+                    res = _projectSetupService.UpdateVSProjectNuGetPackages(_projectOptions, customParams[0].ToString());
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(string.Format("UpdateVSProjectNuGetPackages:" + ee));
+                }
 
                 // re-generate nuget packages
-                if (_projectSetupService.UpdateVSProjectNuGetPackages(_projectOptions, customParams[0].ToString()))
+                if (res)
                 {
-                    // run nuget stuff
-                    var asm = Assembly.Load("NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a");
+                    try
+                    {
+                        // run nuget stuff
+                        var asm = Assembly.Load("NuGet.VisualStudio.Interop, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a");
 
-                    _nuGetWizard = (IWizard)asm.CreateInstance("NuGet.VisualStudio.TemplateWizard");
-                    _nuGetWizard.RunStarted(automationObject, replacementsDictionary, runKind, customParams);
+                        // replacing project file as VS2015 lock original one preventing it from the updates
+                        // VSProjectSetupServiceBase class updates the project file with correct NuGet packages
+
+                        // Investigate Visual Studio 2015 Community / Premium support #23
+                        // https://github.com/SubPointSolutions/spmeta2-vsixextensions/issues/23 
+
+                        var tmpCustomParams = customParams.ToArray();
+                        tmpCustomParams[0] = _projectSetupService.UpdateVSProjectNuGetPackagesFilePath;
+
+                        _nuGetWizard = (IWizard)asm.CreateInstance("NuGet.VisualStudio.TemplateWizard");
+                        _nuGetWizard.RunStarted(automationObject, replacementsDictionary, runKind, tmpCustomParams);
+                    }
+                    catch (Exception ee)
+                    {
+                        MessageBox.Show(string.Format("RunStarted:" + ee));
+                    }
                 }
             }
         }

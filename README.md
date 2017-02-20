@@ -1,10 +1,19 @@
 # SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier, productive and also bring consistency across your projects, people and teams.
 
+### Build status
+| Branch  | Status |
+| ------------- | ------------- |
+| dev   | [![Build status](https://ci.appveyor.com/api/projects/status/h1raft6g5en5dwbi/branch/dev?svg=true)](https://ci.appveyor.com/project/SubPointSupport/spmeta2-vsixextensions/branch/dev)  |
+| beta  | [![Build status](https://ci.appveyor.com/api/projects/status/h1raft6g5en5dwbi/branch/beta?svg=true)](https://ci.appveyor.com/project/SubPointSupport/spmeta2-vsixextensions/branch/beta)  |
+| master| [![Build status](https://ci.appveyor.com/api/projects/status/h1raft6g5en5dwbi/branch/master?svg=true)](https://ci.appveyor.com/project/SubPointSupport/spmeta2-vsixextensions/branch/master) |
+
+
 ### Downloads
 
 * [spmeta2-vsixextensions 1.2.30.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.30.0)
 * [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases)
+
 
 ### The story and experience
 Whenever you build a proof-of-concept, corporate intranet or six-figures project on top of SharePoint platform, 
