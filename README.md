@@ -14,6 +14,7 @@
 * [spmeta2-vsixextensions 1.2.30.0](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases/M2-vsixextensions%201.2.30.0)
 * [All versions](https://github.com/SubPointSolutions/spmeta2-vsixextensions/tree/dev/Releases)
 
+
 ### The story and experience
 Whenever you build a proof-of-concept, corporate intranet or six-figures project on top of SharePoint platform, 
 [SPMeta2/M2]("https://github.com/SubPointSolutions/spmeta2") is all you need to deploy SharePoint artefacts in most enjoyable, smooth, testable and repeatable way. [SPMeta2]("https://github.com/SubPointSolutions/spmeta2") is a .NET library that offers a  hassle-free fluent API supporting not only SharePoint 2010, 2013 and O365, but also CSOM and SSOM. It is the first building block to well-structured and consistent projects.
