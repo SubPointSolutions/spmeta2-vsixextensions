@@ -36,6 +36,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_3rd party", "_3rd party", "{FD60CE66-9151-4999-A36B-0C76FF0BC3F5}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubPointSolutions.Docs", "SubPointSolutions.Docs\SubPointSolutions.Docs.csproj", "{B30F6CA8-3E96-4734-B6B1-A61F201099E4}"
