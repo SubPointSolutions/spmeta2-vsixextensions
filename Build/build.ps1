@@ -4,7 +4,6 @@
 # Feel free to change this file to fit your needs.
 ##########################################################################
 
-
 <#
 
 .SYNOPSIS
@@ -42,7 +41,7 @@ http://cakebuild.net
 [CmdletBinding()]
 Param(
     [string]$Script = "build.cake",
-    [string]$Target = "Docs-Publishing",
+    [string]$Target = "Default",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Debug",
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]

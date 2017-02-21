@@ -10,8 +10,6 @@ TileDescription: 'Useful Visual Studio snippets, project and item templates to b
 ## SPMeta2 Extensions for Visual Studio
 [SPMeta2 Extensions for Visual Studio]("https://github.com/SubPointSolutions/spmeta2-vsixextensions") adds a bunch of useful snippets, project and item templates to Visual Studio. The purpose is to make your daily M2/SharePoint related work in Visual Studio much easier and more productive, while also bringing consistency across your projects, people and teams.
 
-CI build 2 - appveyour
-
 ### The story and experience
 Whether you are building a proof-of-concept, a corporate intranet or a six-figures project on top of SharePoint platform, 
 [SPMeta2/M2]("https://github.com/SubPointSolutions/spmeta2") is all you need to deploy SharePoint artefacts in an enjoyable, smooth, testable and repeatable way. [SPMeta2]("https://github.com/SubPointSolutions/spmeta2") is a .NET library that offers a  hassle-free fluent API supporting SharePoint 2010, 2013 and O365 over both CSOM and SSOM. It is the first building block to well-structured and consistent projects.
