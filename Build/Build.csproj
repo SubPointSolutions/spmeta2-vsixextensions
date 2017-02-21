@@ -51,6 +51,7 @@
     <None Include="build.cake" />
     <None Include="build.json" />
     <None Include="packages.config" />
+    <None Include="tools\nuget.exe.config" />
     <None Include="tools\packages.config" />
     <None Include="tools\packages.config.md5sum" />
   </ItemGroup>
