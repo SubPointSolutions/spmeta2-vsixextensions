@@ -1,5 +1,6 @@
 ﻿// load up common tools
-#load SubPointSolutions.CakeBuild.Core.cake
+#tool nuget:https://www.myget.org/F/subpointsolutions-staging/api/v2?package=SubPointSolutions.CakeBuildTools&prerelease
+#load tools\SubPointSolutions.CakeBuildTools\scripts\SubPointSolutions.CakeBuild.Core.cake
 
 // redefining default build task
 // cleaning up existing actions, adding our custom one
