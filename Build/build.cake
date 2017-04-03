@@ -7,6 +7,7 @@
 
 // in that case we follow all the avialable 'Default' build profiles from the core build script
 
+/*
 defaultActionBuild.Task.Actions.Clear();
 defaultActionBuild
     .Does(() => 
@@ -23,6 +24,7 @@ defaultActionBuild
         settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
     });
 });
+*/
 
 // filling up default build task with custom build
 //defaultActionBuild.Does(actionCustomBuild);
