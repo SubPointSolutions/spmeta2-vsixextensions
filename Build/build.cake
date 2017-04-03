@@ -22,12 +22,6 @@ defaultActionBuild
         // error MSB4018: The "ValidateVsixManifest" task failed unexpectedly
         settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
     });
-
-	MSBuild(defaultSolutionFilePath, settings => {
-
-        //settings.Verbosity = Verbosity.Quiet; 
-        settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
-    });
 });
 
 // filling up default build task with custom build
