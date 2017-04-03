@@ -15,11 +15,17 @@ defaultActionBuild
 
 	MSBuild(defaultSolutionFilePath, settings => {
 
-        settings.Verbosity = Verbosity.Quiet; 
+        //settings.Verbosity = Verbosity.Quiet; 
         
         // Building with MSBuild 12.0 fails #97
         // CRAZY!! to avoid the following error
         // error MSB4018: The "ValidateVsixManifest" task failed unexpectedly
+        settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
+    });
+
+	MSBuild(defaultSolutionFilePath, settings => {
+
+        //settings.Verbosity = Verbosity.Quiet; 
         settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
     });
 });

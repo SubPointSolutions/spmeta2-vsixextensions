@@ -23,18 +23,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VS.CSharp.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Releases", "Releases\Releases.csproj", "{FB1BAF97-9656-4972-91EE-1D8C56476C09}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3D8F8B2D-836F-4F1F-AB13-9785AF22383D}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPMeta2.VsixExtensions.Docs", "SPMeta2.VsixExtensions.Docs\SPMeta2.VsixExtensions.Docs.csproj", "{6F4C7A4F-4DDA-44A3-B79D-6CD83FAB9F20}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{EFDA3CA8-1385-41B6-8031-6A32BAF8F56C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_3rd party", "_3rd party", "{FD60CE66-9151-4999-A36B-0C76FF0BC3F5}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		README.md = README.md
 	EndProjectSection
