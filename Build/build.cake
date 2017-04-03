@@ -18,8 +18,8 @@ defaultActionBuild
         settings.SetPlatformTarget(PlatformTarget.MSIL)
             .SetMSBuildPlatform(MSBuildPlatform.x86)
             .UseToolVersion(MSBuildToolVersion.VS2013)
-            .WithProperty("TreatWarningsAsErrors","true")
-            .SetVerbosity(Verbosity.Quiet)
+            //.WithProperty("TreatWarningsAsErrors","false")
+            //.SetVerbosity(Verbosity.Quiet)
             .WithTarget("Build")
             .SetConfiguration("Debug"));
 
