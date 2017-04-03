@@ -47,6 +47,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="github-release-notes.chtml" />
     <None Include="build.ps1" />
     <None Include="build.cake" />
     <None Include="build.json" />
