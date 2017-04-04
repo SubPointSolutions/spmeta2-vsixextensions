@@ -39,5 +39,12 @@ defaultActionBuild
 // filling up default build task with custom build
 //defaultActionBuild.Does(actionCustomBuild);
 
+taskDefaultBuild.Task.Actions.Clear();
+
+taskDefaultBuild
+	.IsDependentOn("Default-Clean")
+	.IsDependentOn("Action-Restore-NuGet-Packages")
+        .IsDependentOn("Action-Build");
+
 // default targets
 RunTarget(target);
