@@ -47,15 +47,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="github-release-notes.chtml" />
     <None Include="build.ps1" />
     <None Include="build.cake" />
     <None Include="build.json" />
-    <None Include="packages.config" />
-    <None Include="tools\nuget.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="tools\nuget.config" />
     <None Include="tools\packages.config" />
     <None Include="tools\packages.config.md5sum" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tools\nuget.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
