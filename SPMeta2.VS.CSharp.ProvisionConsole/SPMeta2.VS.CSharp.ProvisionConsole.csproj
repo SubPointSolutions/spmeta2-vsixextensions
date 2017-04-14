@@ -69,18 +69,18 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Packages\Microsoft.SharePointOnline.CSOM.16.1.6008.1200.nupkg" />
-    <None Include="Packages\SPMeta2.Core.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.Core.Standard.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Foundation-v14.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Foundation-v16.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Foundation.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Standard-v14.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Standard-v16.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.CSOM.Standard.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.SSOM.Foundation-v14.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.SSOM.Foundation.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.90.nupkg" />
-    <None Include="Packages\SPMeta2.SSOM.Standard.1.2.90.nupkg" />
+    <None Include="Packages\SPMeta2.Core.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.Core.Standard.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Foundation-v14.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Foundation-v16.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Foundation.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Standard-v14.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Standard-v16.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.CSOM.Standard.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.SSOM.Foundation-v14.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.SSOM.Foundation.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.SSOM.Standard-v14.1.2.120.nupkg" />
+    <None Include="Packages\SPMeta2.SSOM.Standard.1.2.120.nupkg" />
     <None Include="PSScripts\00. Template.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
