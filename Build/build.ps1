@@ -4,7 +4,6 @@
 # Feel free to change this file to fit your needs.
 ##########################################################################
 
-
 <#
 
 .SYNOPSIS
@@ -42,7 +41,7 @@ http://cakebuild.net
 [CmdletBinding()]
 Param(
     [string]$Script = "build.cake",
-    [string]$Target = "Docs-Publishing",
+    [string]$Target = "Default",
     [ValidateSet("Release", "Debug")]
     [string]$Configuration = "Debug",
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
@@ -160,11 +159,19 @@ if(-Not $SkipToolPackageRestore.IsPresent) {
     Set-Location $TOOLS_DIR
 
     # Check for changes in packages.config and remove installed tools if true.
+	<#
     [string] $md5Hash = MD5HashFile($PACKAGES_CONFIG)
     if((!(Test-Path $PACKAGES_CONFIG_MD5)) -Or
       ($md5Hash -ne (Get-Content $PACKAGES_CONFIG_MD5 ))) {
         Write-Verbose -Message "Missing or changed package.config hash..."
         Remove-Item * -Recurse -Exclude packages.config,nuget.exe
+    }
+	#>
+	[string] $md5Hash = MD5HashFile($PACKAGES_CONFIG)
+    if((!(Test-Path $PACKAGES_CONFIG_MD5))) {
+        Write-Verbose -Message "Missing or changed package.config hash..."
+		throw "Missing or changed package.config hash..."
+        #Remove-Item * -Recurse -Exclude packages.config,nuget.exe
     }
 
     Write-Verbose -Message "Restoring tools from NuGet..."

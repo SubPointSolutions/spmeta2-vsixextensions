@@ -1,168 +1,27 @@
-﻿#addin "Cake.Powershell"
-#addin nuget:?package=Cake.Git
+﻿// load up common tools
+#tool nuget:https://www.myget.org/F/subpointsolutions-staging/api/v2?package=SubPointSolutions.CakeBuildTools&prerelease
+#load tools\SubPointSolutions.CakeBuildTools\scripts\SubPointSolutions.CakeBuild.Core.cake
 
-//////////////////////////////////////////////////////////////////////
-// ARGUMENTS
-//////////////////////////////////////////////////////////////////////
+// redefining default build task
+// cleaning up existing actions, adding our custom one
+// in that case we follow all the avialable 'Default' build profiles from the core build script
 
-var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Debug");
-
-//////////////////////////////////////////////////////////////////////
-// PREPARATION
-//////////////////////////////////////////////////////////////////////
-
-var solutionDirectory = "./../"; 
-var solutionFilePath = "./../SPMeta2.VsixExtensions.sln";
-
-var buildDirs = new [] {
-
-    new DirectoryPath("./../SPMeta2.VS.Tooling/bin/"),
-
-    new DirectoryPath("./../SPMeta2.VS.Visualizers/bin/"),
-    new DirectoryPath("./../SPMeta2.VS.Visualizers.Tests/bin/"),
-
-    new DirectoryPath("./../SPMeta2.VsixExtensions/bin/"),
-    new DirectoryPath("./../SPMeta2.VsixExtensions.Docs/bin/")
-};
-
-Task("Clean")
-    //.IsDependentOn("Validate-Environment")
-    .Does(() =>
-{
-    foreach(var dirPath in buildDirs) {
-        CleanDirectory(dirPath);
-    }        
-});
-
-Task("Restore-NuGet-Packages")
-    .IsDependentOn("Clean")
-    .Does(() =>
-{
-    NuGetRestore(solutionFilePath);
-});
-
-
-Task("Build-VSIX")
-    .IsDependentOn("Restore-NuGet-Packages")
+defaultActionBuild.Task.Actions.Clear();
+defaultActionBuild
     .Does(() => 
 {
-    Information(string.Format("Building VSIX..."));
+    Information(string.Format("Building VSIX for solution:[{0}]", defaultSolutionFilePath));
 
-	MSBuild(solutionFilePath, settings => {
-
-        settings.Verbosity = Verbosity.Quiet; 
-        
-        // Building with MSBuild 12.0 fails #97
-        // CRAZY!! to avoid the following error
-        // error MSB4018: The "ValidateVsixManifest" task failed unexpectedly
-        settings.ToolPath = @"C:\Program Files (x86)\MSBuild\12.0\bin\MSBuild.exe";
-    });
+	// https://blog.agchapman.com/vsix-continuous-integration-using-cake-and-appveyor/
+	MSBuild(defaultSolutionFilePath, settings =>
+        settings.SetPlatformTarget(PlatformTarget.MSIL)
+            .SetMSBuildPlatform(MSBuildPlatform.x86)
+            .UseToolVersion(MSBuildToolVersion.VS2013)
+            //.WithProperty("TreatWarningsAsErrors","false")
+            //.SetVerbosity(Verbosity.Quiet)
+            .WithTarget("Build")
+            .SetConfiguration("Debug"));
 });
 
-Task("Docs-Publishing")
-    .Does(() =>
-{
-    var projectName = "SPMeta2 VS";
-    var projectDocsFolder = "SPMeta2-VS";
-	var projectDocsCheckOutFolder = "m2-vs";
-
-    var environmentVariables = new [] {
-        "subpointsolutions-docs-username",
-        "subpointsolutions-docs-userpassword",
-    };
-
-    foreach(var name in environmentVariables)
-    {
-        Information(string.Format("HasEnvironmentVariable - [{0}]", name));
-        if(!HasEnvironmentVariable(name)) {
-            Information(string.Format("Cannot find environment variable:[{0}]", name));
-            throw new ArgumentException(string.Format("Cannot find environment variable:[{0}]", name));
-        }
-    }
-
-     var docsRepoUserName = EnvironmentVariable("subpointsolutions-docs-username");
-	 var docsRepoUserPassword = EnvironmentVariable("subpointsolutions-docs-userpassword");
-
-     var docsRepoFolder = string.Format(@"{0}/{1}",  "c:/__m2", projectDocsCheckOutFolder);
-     var docsRepoUrl = @"https://github.com/SubPointSolutions/subpointsolutions-docs";
-     var docsRepoPushUrl = string.Format(@"https://{0}:{1}@github.com/SubPointSolutions/subpointsolutions-docs", docsRepoUserName, docsRepoUserPassword);
-
-     var srcDocsPath = System.IO.Path.GetFullPath(string.Format(@"./../SubPointSolutions.Docs/Views/{0}", projectDocsFolder));
-     var dstDocsPath = string.Format(@"{0}/subpointsolutions-docs/SubPointSolutions.Docs/Views", docsRepoFolder);
-
-     var commitName = string.Format(@"{0} - CI docs update {1}", projectName, DateTime.Now.ToString("yyyyMMdd_HHmmssfff"));
-
-     Information(string.Format("Merging documentation wiht commit:[{0}]", commitName));
-
-     Information(string.Format("Cloning repo [{0}] to [{1}]", docsRepoUrl, docsRepoFolder));
-
-     if(!System.IO.Directory.Exists(docsRepoFolder))
-     {   
-        System.IO.Directory.CreateDirectory(docsRepoFolder);   
-
-        var cloneCmd = new []{
-            string.Format("cd '{0}'", docsRepoFolder),
-            string.Format("git clone -b wyam-dev {0}", docsRepoUrl)
-        };
-
-        StartPowershellScript(string.Join(Environment.NewLine, cloneCmd));  
-     }                            
-
-     docsRepoFolder = docsRepoFolder + "/subpointsolutions-docs"; 
-
-     Information(string.Format("Checkout..."));
-     var checkoutCmd = new []{
-            string.Format("cd '{0}'", docsRepoFolder),
-            string.Format("git checkout wyam-dev"),
-            string.Format("git pull")
-      };
-
-      StartPowershellScript(string.Join(Environment.NewLine, checkoutCmd));  
-
-      Information(string.Format("Merge and commit..."));
-      var mergeCmd = new []{
-            string.Format("cd '{0}'", docsRepoFolder),
-            string.Format("copy-item  '{0}' '{1}' -Recurse -Force", srcDocsPath,  dstDocsPath),
-            string.Format("git add *.md"),
-            string.Format("git add *.cs"),
-            string.Format("git commit -m '{0}'", commitName),
-      };
-
-      StartPowershellScript(string.Join(Environment.NewLine, mergeCmd)); 
-
-      Information(string.Format("Push to the main repo..."));
-      var pushCmd = new []{
-            string.Format("cd '{0}'", docsRepoFolder),
-            string.Format("git config http.sslVerify false"),
-            string.Format("git push {0}", docsRepoPushUrl)
-      };
-
-      var res = StartPowershellScript(string.Join(Environment.NewLine, pushCmd), new PowershellSettings()
-      {
-            LogOutput = false,
-            OutputToAppConsole  = false
-      });
-
-      Information(string.Format("Completed docs merge.")); 
-});
-
-//////////////////////////////////////////////////////////////////////
-// TASK TARGETS
-//////////////////////////////////////////////////////////////////////
-
-Task("Default-Docs")
-    .IsDependentOn("Docs-Publishing");
-
-Task("Default-Appveyor")
-	.IsDependentOn("Build-VSIX")
-    .IsDependentOn("Docs-Publishing");
-
-Task("Default")
-    .IsDependentOn("Build-VSIX");
-
-//////////////////////////////////////////////////////////////////////
-// EXECUTION
-//////////////////////////////////////////////////////////////////////
-
+// default targets
 RunTarget(target);
